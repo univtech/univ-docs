@@ -1,0 +1,21 @@
+mat-toolbar.toolbar {
+    .toolbar-external-icons-container {
+        a {
+            @media screen and (max-width: 480px) {
+                margin: 0 -8px 0 0;
+            }
+
+            @media screen and (max-width: 420px) {
+                &:not([title="GitHub"]) {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 350px) {
+                &[title="GitHub"] {
+                    display: none;
+                }
+            }
+        }
+    }
+}

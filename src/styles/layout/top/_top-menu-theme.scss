@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $primary: map.get($theme, primary);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    mat-toolbar.toolbar {
+        univ-top-menu {
+            ul {
+                li {
+                    a.nav-link {
+                        .nav-link-inner {
+                            &:hover {
+                                background: rgba(constant.$color-white, 0.15);
+                            }
+                        }
+
+                        &:focus {
+                            .nav-link-inner {
+                                background: rgba(constant.$color-white, 0.15);
+                                box-shadow: 0 0 1px 2px constant.$color-outline-dark;
+                            }
+                        }
+
+                        &:active {
+                            .nav-link-inner {
+                                background: rgba(constant.$color-white, 0.15);
+                            }
+                        }
+                    }
+
+                    &.selected {
+                        a.nav-link {
+                            .nav-link-inner {
+                                background: rgba(constant.$color-white, 0.15);
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            background: if($is-dark-theme, material.get-color-from-palette($primary, darker), constant.$color-blue);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

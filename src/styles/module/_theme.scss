@@ -1,0 +1,27 @@
+@use 'alert/alert-theme';
+@use 'button/button-theme';
+@use 'callout/callout-theme';
+@use 'card/card-theme';
+@use 'code/code-theme';
+@use 'detail/detail-theme';
+@use 'file/file-tree-theme';
+@use 'heading/heading-theme';
+@use 'hr/hr-theme';
+@use 'image/image-theme';
+@use 'reviewed/reviewed-theme';
+@use 'table/table-theme';
+
+@mixin theme($theme) {
+    @include alert-theme.theme($theme);
+    @include button-theme.theme($theme);
+    @include callout-theme.theme($theme);
+    @include card-theme.theme($theme);
+    @include code-theme.theme($theme);
+    @include detail-theme.theme($theme);
+    @include file-tree-theme.theme($theme);
+    @include heading-theme.theme($theme);
+    @include hr-theme.theme($theme);
+    @include image-theme.theme($theme);
+    @include reviewed-theme.theme($theme);
+    @include table-theme.theme($theme);
+}

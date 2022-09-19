@@ -1,0 +1,12 @@
+@use '../../constant';
+
+@mixin theme($theme) {
+    mat-toolbar.toolbar {
+        .nav-link.home {
+            &:focus {
+                // outline-style为auto时，outline-offset不适用于Windows上的Chrome浏览器
+                outline: 1px solid constant.$color-outline-dark;
+            }
+        }
+    }
+}

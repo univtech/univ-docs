@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>Univ文档</title>
+    <meta name="Description" content="Univ文档">
+    <base href="/">
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://stats.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="search" type="application/opensearchdescription+xml" href="assets/opensearch.xml">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="assets/images/favicons/favicon-194.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicons/favicon-144.png">
+
+    <!-- 注意：这些地址必须与ngsw-config.json保持一致 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
+
+    <style id="univ-initial-theme">
+        @import url("light-theme.css") (prefers-color-scheme: light);
+        @import url("dark-theme.css") (prefers-color-scheme: dark);
+    </style>
+
+    <link rel="manifest" href="pwa-manifest.json">
+    <meta name="theme-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+
+    <script>
+        // 动态预添加noindex，文档准备好且有效时删除noindex，参考：doc-view.component.ts
+        metaElement = document.createElement('meta');
+        metaElement.name = 'robots';
+        metaElement.content = 'noindex';
+        document.head.appendChild(metaElement);
+    </script>
+
+    <script>
+        // 谷歌分析服务，自定义谷歌分析跟踪脚本，gaName必须与google.service.ts保持一致
+        (function(window, document, tagName, gaUrl, gaName, scriptElement, scriptCollection) {
+            // Trusted类型可用时，把路径指定为TrustedScriptURL
+            if (window.trustedTypes) {
+                gaUrl = window.trustedTypes.createPolicy('univ#analytics', {
+                    createScriptURL: function(scriptUrl) {
+                        return scriptUrl;
+                    }
+                }).createScriptURL(gaUrl);
+            }
+
+            window['GoogleAnalyticsObject'] = gaName;
+            window[gaName] = window[gaName] || function() {
+                (window[gaName].q = window[gaName].q || []).push(arguments)
+            };
+            window[gaName].l = 1 * new Date();
+
+            scriptElement = document.createElement(tagName);
+            scriptElement.async = 1;
+            scriptElement.src = gaUrl;
+            scriptCollection = document.getElementsByTagName(tagName)[0];
+
+            // 不运行e2e测试时，只加载库
+            ~window.name.indexOf('NG_DEFER_BOOTSTRAP') || scriptCollection.parentNode.insertBefore(scriptElement, scriptCollection)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    </script>
+</head>
+
+<body>
+
+<univ-app></univ-app>
+
+<noscript>
+    <div class="background-sky hero"></div>
+    <section id="intro" style="text-shadow: 1px 1px #1976D2;">
+        <div class="hero-logo"></div>
+        <div class="homepage-container">
+            <div class="hero-headline">文档平台</div>
+        </div>
+    </section>
+    <h2 style="color: red; margin-top: 40px; position: relative; text-align: center; text-shadow: 1px 1px #fafafa; border-top: none;">
+        <b><i>此网站需要JavaScript</i></b>
+    </h2>
+</noscript>
+
+</body>
+
+</html>

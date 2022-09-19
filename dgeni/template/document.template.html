@@ -1,0 +1,15 @@
+{% import "./github.template.html" as github -%}
+{% set startWith = r/^mixture\/|failure\// %}
+{% set relativePath = doc.fileInfo.relativePath %}
+{% if doc.title %}{$ ('# ' + doc.title.trim()) | marked $}{% endif %}
+{% if not startWith.test(relativePath) %}
+<div class="github-links">
+    {$ github.githubEditLink(doc, versionInfo) $}
+</div>
+{% endif %}
+{% block content %}
+<div class="content">
+    {$ doc.description | marked $}
+    {% if doc.reviewed %}<div class="reviewed">最后审核日期：{$ doc.reviewed.date.toDateString() $}</div>{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+<div class="search-results" [ngSwitch]="searchState">
+
+    <ng-container *ngSwitchCase="'in-search'">
+        <p class="no-results">正在进行搜索</p>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'has-result'">
+        <h2 class="visually-hidden">搜索结果</h2>
+        <div class="search-area" *ngFor="let searchArea of searchAreas">
+            <h3 class="search-section-header">{{searchArea.name}}（{{searchArea.results.length}}）</h3>
+            <ul>
+                <li class="search-page" *ngFor="let searchResult of searchArea.results">
+                    <a class="search-result-item" href="{{searchResult.path}}" (click)="selectSearchResult($event, searchResult)">
+                        <span>{{searchResult.title}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'no-result'">
+        <div class="search-nothing">
+            <p *ngIf="!isEmbedded" class="no-results">未搜索到结果，以下链接可能对您有所帮助：</p>
+            <div class="nav-links">
+                <div class="search-area" *ngFor="let navNode of navNodes">
+                    <a class="search-section-header" href="{{navNode.url}}" (click)="selectNavNode($event, navNode)">
+                        <span>{{navNode.title}}</span>
+                    </a>
+                    <ul *ngIf="navNode.childNodes && navNode.childNodes.length !== 0">
+                        <li class="search-page" *ngFor="let childNode of navNode.childNodes">
+                            <a class="search-result-item" href="{{childNode.url}}" (click)="selectNavNode($event, childNode)">
+                                <span>{{childNode.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <button *ngIf="!isEmbedded" mat-icon-button class="close-button" aria-label="关闭搜索结果" (click)="closeSearchResult()">
+        <mat-icon svgIcon="icon_close"></mat-icon>
+    </button>
+
+</div>

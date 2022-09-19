@@ -1,0 +1,7 @@
+<nav [attr.aria-label]="navLabel || null">
+    <univ-side-item *ngFor="let navNode of navNodes"
+                    [navNode]="navNode"
+                    [traceNodes]="currNode?.traceNodes"
+                    [isWideScreen]="isWideScreen">
+    </univ-side-item>
+</nav>

@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .alert {
+        color: if($is-dark-theme, constant.$color-white-off, constant.$color-gray-dark);
+
+        &.is-critical {
+            border-left: 8px solid constant.$color-red-bright;
+            background-color: if($is-dark-theme, constant.$color-gray-deep, rgba(constant.$color-red-bright, 0.05));
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: constant.$color-red-bright;
+            }
+        }
+
+        &.is-important {
+            border-left: 8px solid constant.$color-orange;
+            background-color: if($is-dark-theme, constant.$color-gray-deep, rgba(constant.$color-orange, 0.05));
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: constant.$color-orange;
+            }
+        }
+
+        &.is-helpful {
+            border-left: 8px solid constant.$color-blue;
+            background-color: if($is-dark-theme, constant.$color-gray-deep, rgba(constant.$color-blue, 0.05));
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: constant.$color-blue;
+            }
+        }
+
+        &.archive-warning {
+            background-color: if($is-dark-theme, constant.$color-gray-deep, constant.$color-red-dark);
+
+            * {
+                color: constant.$color-white;
+            }
+
+            a {
+                color: constant.$color-white;
+            }
+        }
+    }
+}

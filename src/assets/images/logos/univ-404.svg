@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="univ-404" x="0px" y="0px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+<style type="text/css">
+    #shield {
+        fill: #E23237;
+    }
+
+    #shield_right {
+        fill: #B52E31;
+    }
+
+    #circle_left {
+        fill: #FFFFFF;
+    }
+
+    #circle_right {
+        fill: #FFFFFF;
+    }
+
+    #arc {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+    }
+</style>
+
+<g>
+    <path id="shield" d="m193.20703,5.16406l0,94.83594c0,52.37793 -41.72887,94.83594 -93.20703,94.83594c-51.47816,0 -93.20703,-42.458 -93.20703,-94.83594l0,-94.83594l186.41406,0zm0,0"/>
+    <path id="shield_right" d="m193.20703,5.16406l0,94.83594c0,52.37793 -41.72887,94.83594 -93.20703,94.83594l0,-189.67188l93.20703,0z"/>
+    <circle id="circle_left" cx="61.7" cy="80" r="10.7"/>
+    <circle id="circle_right" cx="138.3" cy="80" r="10.7"/>
+    <path id="arc" d="M138,130.6c0,0-33.5-42.5-76,0"/>
+</g>
+
+</svg>

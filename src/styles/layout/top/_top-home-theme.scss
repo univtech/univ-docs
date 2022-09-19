@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $primary: map.get($theme, primary);
+    //$foreground: map.get($theme, foreground); TODO 调整主页二级菜单颜色
+    $is-dark-theme: map.get($theme, is-dark);
+
+    mat-toolbar.toolbar {
+        .page-mixture-index & {
+            background: if($is-dark-theme, material.get-color-from-palette($primary, darker), constant.$color-blue);
+        }
+
+        //.page-mixture-index & univ-top-menu { TODO 调整主页二级菜单颜色
+        //    ul {
+        //        li {
+        //            &:hover {
+        //                ul {
+        //                    background: linear-gradient(145deg, material.get-color-from-palette($primary, 900), if($is-dark-theme, material.get-color-from-palette($primary, 700), #42a5f5));
+        //                    color: material.get-color-from-palette($foreground, text);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+    }
+}

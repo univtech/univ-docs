@@ -1,0 +1,69 @@
+<!--
+这部分内容用于替换index.html中的<body>部分，以生成自定义的404.html页面。
+这部分内容在视觉和结构上必须类似于未找到页面时main应用程序的HTML结果页面。
+-->
+
+<style>
+    .mat-toolbar-row {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 0 16px;
+        width: 100%;
+        height: 64px;
+        align-items: center;
+        white-space: nowrap
+    }
+
+    @media (max-width: 600px) {
+        .mat-toolbar-row {
+            height: 56px
+        }
+    }
+
+    .nav-link.home {
+        margin-left: 24px
+    }
+</style>
+
+<univ-app class="mode-stable page-failure-404 folder-failure view- univ-notice-hide">
+
+    <mat-toolbar class="toolbar no-print mat-toolbar mat-primary">
+        <mat-toolbar-row class="mat-toolbar-row">
+            <a class="nav-link home" href="/">
+                <img title="主页" alt="主页" width="150" height="40" src="assets/images/logos/univ-nav.png">
+            </a>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidenav-container mat-drawer-container mat-sidenav-container" role="main">
+        <mat-sidenav-content class="mat-drawer-content mat-sidenav-content">
+            <section class="sidenav-content" role="article">
+                <univ-doc-view>
+                    <div class="content">
+                        <div class="nf-container l-flex-wrap flex-center">
+                            <img width="300" height="300" alt="文档未找到" src="assets/images/logos/univ-404.svg"/>
+                            <div class="nf-response l-flex-wrap center">
+                                <h1 id="page-not-found" class="no-toc">文档未找到</h1>
+                                <p>很抱歉，您正在查找的文档未找到。</p>
+                            </div>
+                        </div>
+                    </div>
+                </univ-doc-view>
+            </section>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <footer class="no-print">
+        <univ-footer>
+            <p>
+                技术支持：Univ技术 ©2022-2030。
+            </p>
+            <p>
+                代码许可：<a title="代码许可协议" href="license">MIT许可协议</a>；
+                文档许可：<a href="https://creativecommons.org/licenses/by/4.0/">CC4.0许可协议</a>。
+            </p>
+        </univ-footer>
+    </footer>
+
+</univ-app>

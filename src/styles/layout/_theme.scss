@@ -1,0 +1,37 @@
+@use 'global/global-theme';
+@use 'top/top-bar-theme';
+@use 'top/top-home-theme';
+@use 'top/top-burger-theme';
+@use 'top/top-link-theme';
+@use 'top/top-menu-theme';
+@use 'top/top-theme-theme';
+@use 'top/top-search-theme';
+@use 'footer/footer-theme';
+@use 'side/side-nav-theme';
+@use 'side/side-menu-theme';
+@use 'failure/failure-theme';
+@use 'toc/toc-theme';
+@use 'notice/notice-theme';
+@use 'search/search-result-theme';
+@use 'cookie/cookie-popup-theme';
+@use 'market/market-theme';
+
+@mixin theme($theme) {
+    @include global-theme.theme($theme);
+    @include top-bar-theme.theme($theme);
+    @include top-home-theme.theme($theme);
+    @include top-burger-theme.theme($theme);
+    @include top-link-theme.theme($theme);
+    @include top-menu-theme.theme($theme);
+    @include top-theme-theme.theme($theme);
+    @include top-search-theme.theme($theme);
+    @include footer-theme.theme($theme);
+    @include side-nav-theme.theme($theme);
+    @include side-menu-theme.theme($theme);
+    @include failure-theme.theme($theme);
+    @include toc-theme.theme($theme);
+    @include notice-theme.theme($theme);
+    @include search-result-theme.theme($theme);
+    @include cookie-popup-theme.theme($theme);
+    @include market-theme.theme($theme);
+}

@@ -1,0 +1,11 @@
+@use '../../constant';
+
+@mixin theme($theme) {
+    mat-toolbar.toolbar {
+        univ-theme-toggle {
+            @media screen and (min-width: 351px) {
+                border-right: 1px solid constant.$color-white;
+            }
+        }
+    }
+}

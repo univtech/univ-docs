@@ -1,0 +1,15 @@
+@use '../../constant';
+
+@mixin theme($theme) {
+    mat-toolbar.toolbar {
+        .hamburger {
+            &:hover {
+                color: constant.$color-white-off;
+            }
+
+            & .mat-icon {
+                color: constant.$color-white;
+            }
+        }
+    }
+}

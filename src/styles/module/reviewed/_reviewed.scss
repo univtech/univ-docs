@@ -1,0 +1,7 @@
+@use '../../mixin';
+
+.reviewed {
+    @include mixin.font-size(13);
+    font-style: italic;
+    text-align: right;
+}

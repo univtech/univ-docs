@@ -1,0 +1,70 @@
+@use '../../constant';
+@use '../../mixin';
+
+mat-toolbar.toolbar {
+    univ-search-box.search-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        min-width: 150px;
+        height: 100%;
+        margin-right: 16px;
+        position: relative;
+
+        input {
+            border: none;
+            border-radius: 100px;
+            padding: 5px 3rem 5px 16px;
+            margin-left: 8px;
+            width: 180px;
+            max-width: 240px;
+            line-height: normal;
+            height: 50%;
+            -webkit-appearance: none;
+
+            &:focus {
+                outline: none;
+            }
+
+            @include mixin.placeholder {
+                @include mixin.font-size(14);
+            }
+
+            @media (min-width: 1000px) {
+                transition: width 0.4s ease-in-out;
+
+                &:focus {
+                    width: 80%;
+                }
+            }
+
+            @media (max-width: 515px) {
+                width: 150px;
+            }
+
+            &::-webkit-search-cancel-button {
+                display: none;
+            }
+
+            &::-ms-clear {
+                display: none;
+            }
+
+            &:not(:focus):not(:hover) + mat-icon:not(:hover):not(:focus) {
+                display: none;
+            }
+        }
+
+        mat-icon {
+            position: absolute;
+            color: constant.$color-blue;
+            right: 0.7rem;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

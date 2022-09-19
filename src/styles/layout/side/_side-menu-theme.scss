@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    univ-side-menu {
+        univ-side-item {
+            .vertical-menu-item {
+                color: if($is-dark-theme, constant.$color-white-off, constant.$color-gray-dark);
+
+                &:hover {
+                    background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+                    color: if($is-dark-theme, constant.$color-blue-powder, constant.$color-blue);
+                    text-shadow: 0 0 5px if($is-dark-theme, constant.$color-black, constant.$color-white);
+
+                    &.selected {
+                        color: if($is-dark-theme, constant.$color-blue-powder, constant.$color-blue-dark);
+                    }
+                }
+
+                &.selected {
+                    color: if($is-dark-theme, constant.$color-blue-light, constant.$color-blue-dark);
+                }
+            }
+        }
+    }
+}

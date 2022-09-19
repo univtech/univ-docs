@@ -1,0 +1,16 @@
+<nav aria-label="primary">
+    <ul>
+        <li *ngFor="let navNode of navNodes" [ngClass]="{selected: navNode.url === currUrl}">
+            <a class="nav-link" [title]="navNode.tooltip" [href]="navNode.url">
+                <span class="nav-link-inner">{{navNode.title}}</span>
+            </a>
+            <ul *ngIf="navNode.childNodes && navNode.childNodes.length !== 0">
+                <li *ngFor="let childNode of navNode.childNodes" [ngClass]="{selected: childNode.url === currUrl}">
+                    <a class="nav-link" [title]="childNode.tooltip" [href]="childNode.url">
+                        <span class="nav-link-inner">{{childNode.title}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $primary: map.get($theme, primary);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    footer {
+        // 在明暗模式下页脚的背景色相同，不需要指定前景色
+        background-color: material.get-color-from-palette($primary, if($is-dark-theme, 900, 700));
+
+        univ-footer {
+            & > * {
+                color: constant.$color-white;
+            }
+
+            a {
+                color: constant.$color-white;
+            }
+
+            h3 {
+                color: constant.$color-white;
+            }
+        }
+    }
+}

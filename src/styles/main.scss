@@ -1,0 +1,13 @@
+// 导入目录
+@use './base';
+@use './layout';
+@use './module';
+
+// 导入打印样式
+@use './print';
+
+// 导入Angular Material的样式
+@use 'node_modules/@angular/material';
+
+// 导入Angular Material core的基础样式，在应用程序中只需要为Angular Material加载一个CSS文件
+@include material.core();

@@ -1,0 +1,95 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $foreground: map.get($theme, foreground);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    univ-toc {
+        .toc-inner {
+            .toc-heading {
+                &.secondary {
+                    &:hover {
+                        color: constant.$color-blue-accent;
+                    }
+                }
+            }
+
+            button {
+                &.toc-heading,
+                &.toc-more-items {
+                    &.embedded:focus {
+                        background: if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+                        color: if($is-dark-theme, constant.$color-white, constant.$color-gray-medium);
+                    }
+                }
+
+                &.toc-heading {
+                    &:hover:not(.embedded) {
+                        color: constant.$color-blue-accent;
+                    }
+                }
+
+                &.toc-more-items {
+                    color: if($is-dark-theme, constant.$color-gray-light, constant.$color-gray-medium);
+
+                    &:hover {
+                        color: constant.$color-blue-accent;
+                    }
+                }
+            }
+
+            ul.toc-list {
+                li {
+                    &.h1:after {
+                        background: if($is-dark-theme, constant.$color-gray-medium, constant.$color-gray-light);
+                    }
+
+                    a {
+                        color: if($is-dark-theme, constant.$color-white, color.adjust(constant.$color-gray-dark, $lightness: 10%));
+                    }
+
+                    &:hover {
+                        * {
+                            color: if($is-dark-theme, constant.$color-blue-light, constant.$color-blue-accent);
+                        }
+                    }
+
+                    &.active {
+                        * {
+                            color: if($is-dark-theme, constant.$color-cyan, constant.$color-blue);
+                        }
+
+                        a:before {
+                            background: if($is-dark-theme, constant.$color-cyan, constant.$color-blue);
+                        }
+                    }
+                }
+
+                &:not(.embedded) li {
+                    &:before {
+                        border-left-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+                    }
+
+                    &:not(.active):hover {
+                        a:before {
+                            background: constant.$color-gray-light;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.embedded {
+            .toc-inner {
+                .toc-heading {
+                    &.secondary {
+                        color: material.get-color-from-palette($foreground, text);
+                    }
+                }
+            }
+        }
+    }
+}

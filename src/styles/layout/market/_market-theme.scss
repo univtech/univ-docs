@@ -1,0 +1,69 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $primary: map.get($theme, primary);
+    $foreground: map.get($theme, foreground);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .background-sky {
+        background: linear-gradient(145deg, material.get-color-from-palette($primary, 900), if($is-dark-theme, material.get-color-from-palette($primary, 700), #42a5f5));
+        color: material.get-color-from-palette($foreground, text);
+    }
+
+    section#intro {
+        color: constant.$color-white;
+    }
+
+    .announcement-bar {
+        background-color: constant.$color-white;
+
+        .button {
+            color: constant.$color-white;
+            background-color: constant.$color-blue;
+
+            &:hover {
+                color: rgba(constant.$color-white, 0.7);
+            }
+        }
+    }
+
+    .home-row .card {
+        background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-white);
+
+        .card-text-container {
+            p {
+                color: if($is-dark-theme, constant.$color-white-off, constant.$color-gray-dark);
+            }
+        }
+
+        &:hover {
+            h2 {
+                color: if($is-dark-theme, constant.$color-cyan, constant.$color-blue);
+            }
+        }
+    }
+
+    .button.hero-cta {
+        background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-white);
+    }
+
+    .cta-bar {
+        .hero-cta {
+            color: if($is-dark-theme, constant.$color-cyan, constant.$color-blue);
+        }
+    }
+
+    .text-headline {
+        color: if($is-dark-theme, constant.$color-blue-light, constant.$color-blue);
+    }
+
+    .marketing-banner {
+        background-color: if($is-dark-theme, material.get-color-from-palette($primary, 800), material.get-color-from-palette($primary, 600));
+
+        .banner-headline {
+            color: constant.$color-white;
+        }
+    }
+}

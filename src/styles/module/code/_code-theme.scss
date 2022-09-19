@@ -1,0 +1,238 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    unic-code-example {
+        &:not(.no-box) {
+            background-color: if($is-dark-theme, constant.$color-gray-deep, rgb(constant.$color-gray-bg, 0.2));
+            border: 0.5px solid if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+            color: constant.$color-gray-dark;
+        }
+
+        // TERMINAL / SHELL TEXT STYLES
+        &[language="shell"],
+        &[language="sh"],
+        &[language="bash"] {
+            background-color: constant.$color-gray-dark;
+        }
+
+        header {
+            background-color: constant.$color-blue-accent;
+            color: constant.$color-white-off;
+        }
+    }
+
+    unic-code-tab {
+        .code-tab-group {
+            .mat-tab-label {
+                &:hover {
+                    background: rgba(black, 0.04);
+                }
+            }
+        }
+    }
+
+    unic-code-example.avoid header,
+    unic-code-example.avoidFile header {
+        border: 2px solid constant.$color-red-bright;
+        background: constant.$color-red-bright;
+    }
+
+    unic-code-example.avoid,
+    unic-code-example.avoidFile,
+    unic-code-tab.avoid mat-tab-body,
+    unic-code-tab.avoidFile mat-tab-body {
+        border: 0.5px solid constant.$color-red-bright;
+    }
+
+    unic-code {
+        pre.prettyprint {
+            code {
+                ol.linenums {
+                    color: color.adjust(constant.$color-gray-medium, $lightness: 25%);
+
+                    li {
+                        &::marker {
+                            color: color.adjust(constant.$color-gray-medium, $lightness: 25%);
+                        }
+                    }
+                }
+
+                .code-missing {
+                    color: constant.$color-red-dark;
+                }
+            }
+
+            &.lang-sh,
+            &.lang-bash {
+                .copy-button {
+                    color: if($is-dark-theme, constant.$color-blue-gray-200, constant.$color-gray-light);
+
+                    &:hover {
+                        color: if($is-dark-theme, constant.$color-blue-gray-300, constant.$color-gray-thin);
+                    }
+                }
+            }
+        }
+
+        .copy-button {
+            color: if($is-dark-theme, constant.$color-blue-gray-200, constant.$color-blue-dark);
+        }
+    }
+
+    .sidenav-content {
+        code a,
+        a > code {
+            color: if($is-dark-theme, constant.$color-cyan, constant.$color-blue-dark);
+        }
+
+        :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(pre) {
+            > code {
+                background-color: if($is-dark-theme, constant.$color-gray-dark, rgba(constant.$color-gray-light, 0.3));
+            }
+
+            &:not(a) > code {
+                color: if($is-dark-theme, constant.$color-white, constant.$color-gray-dark);
+            }
+        }
+    }
+
+    // Dark Mode Code Palette
+    $code-lightteal: #17d3ff;
+    $code-lightred: #ffb0b0;
+    $code-lightgreen: #c3e88d;
+    $code-lightpurple: #d1b4ff;
+    $code-lightorange: #ffd779;
+    $code-lightblue: #98caff;
+    $code-grey: rgba(255, 255, 255, 0.7);
+
+    /* PRETTY PRINTING STYLES for prettify.js. */
+
+    /* The following class|color styles are derived from https://github.com/google/code-prettify/blob/master/src/prettify.css*/
+
+    /* SPAN elements with the classes below are added by prettyprint. */
+    .pln {
+        color: if($is-dark-theme, constant.$color-white, #000);
+    }
+    /* plain text */
+
+    @media screen {
+        .str {
+            color: if($is-dark-theme, $code-lightgreen, #800);
+        }
+        /* string content */
+        .kwd {
+            color: if($is-dark-theme, $code-lightteal, #00f);
+        }
+        /* a keyword */
+        .com {
+            color: if($is-dark-theme, $code-grey, #060);
+        }
+        /* a comment */
+        .typ {
+            color: if($is-dark-theme, $code-lightred, red);
+        }
+        /* a type name */
+        .lit {
+            color: if($is-dark-theme, $code-lightpurple, #08c);
+        }
+        /* a literal value */
+        /* punctuation, lisp open bracket, lisp close bracket */
+        .pun,
+        .opn,
+        .clo {
+            color: if($is-dark-theme, $code-lightorange, #660);
+        }
+        .tag {
+            color: if($is-dark-theme, $code-lightblue, #008);
+        }
+        /* a markup tag name */
+        .atn {
+            color: if($is-dark-theme, $code-lightpurple, #606);
+        }
+        /* a markup attribute name */
+        .atv {
+            color: if($is-dark-theme, $code-lightorange, #800);
+        }
+        /* a markup attribute value */
+        .dec,
+        .var {
+            color: if($is-dark-theme, $code-lightpurple, #606);
+        }
+        /* a declaration; a variable name */
+        .fun {
+            color: if($is-dark-theme, $code-lightred, red);
+        }
+        /* a function name */
+    }
+
+    /* Use higher contrast and text-weight for printable form. */
+    @media print, projection {
+        .str {
+            color: #060;
+        }
+        .kwd {
+            color: #006;
+            font-weight: bold;
+        }
+        .com {
+            color: #600;
+            font-style: italic;
+        }
+        .typ {
+            color: #404;
+            font-weight: bold;
+        }
+        .lit {
+            color: #044;
+        }
+        .pun,
+        .opn,
+        .clo {
+            color: #440;
+        }
+        .tag {
+            color: #006;
+            font-weight: bold;
+        }
+        .atn {
+            color: #404;
+        }
+        .atv {
+            color: #060;
+        }
+    }
+
+    /* SHELL / TERMINAL CODE BLOCKS */
+
+    unic-code-example {
+        &[language="shell"],
+        &[language="sh"],
+        &[language="bash"] {
+            .pnk,
+            .blk,
+            .pln,
+            .otl,
+            .kwd,
+            .typ,
+            .tag,
+            .str,
+            .atv,
+            .atn,
+            .com,
+            .lit,
+            .pun,
+            .dec {
+                color: constant.$color-green-200;
+            }
+
+            .copy-button {
+                color: constant.$color-blue-gray-200;
+            }
+        }
+
+    }
+}

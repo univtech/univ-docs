@@ -1,0 +1,121 @@
+[
+    {
+        "title": "Resources",
+        "childNodes": [
+            {
+                "url": "#",
+                "title": "About",
+                "tooltip": "Angular contributors."
+            },
+            {
+                "url": "#",
+                "title": "Resource Listing",
+                "tooltip": "Angular tools, training, and blogs from around the web."
+            },
+            {
+                "url": "#",
+                "title": "Press Kit",
+                "tooltip": "Press contacts, logos, and branding."
+            },
+            {
+                "url": "#",
+                "title": "Blog",
+                "tooltip": "Angular Blog"
+            },
+            {
+                "url": "#",
+                "title": "Usage Analytics",
+                "tooltip": "Angular Usage Analytics"
+            }
+        ]
+    },
+    {
+        "title": "Help",
+        "childNodes": [
+            {
+                "url": "https://stackoverflow.com/questions/tagged/angular",
+                "title": "Stack Overflow",
+                "tooltip": "Stack Overflow: where the community answers your technical Angular questions."
+            },
+            {
+                "url": "https://discord.gg/angular",
+                "title": "Join Discord",
+                "tooltip": "Join the discussions at Angular Community Discord server."
+            },
+            {
+                "url": "https://gitter.im/angular/angular",
+                "title": "Gitter",
+                "tooltip": "Chat about Angular with other birds of a feather."
+            },
+            {
+                "url": "https://github.com/angular/angular/issues",
+                "title": "Report Issues",
+                "tooltip": "Post issues and suggestions on github."
+            },
+            {
+                "url": "https://github.com/angular/code-of-conduct/blob/main/CODE_OF_CONDUCT.md",
+                "title": "Code of Conduct",
+                "tooltip": "Treating each other with respect."
+            }
+        ]
+    },
+    {
+        "title": "Community",
+        "childNodes": [
+            {
+                "url": "#",
+                "title": "Events",
+                "tooltip": "Angular events around the world."
+            },
+            {
+                "url": "https://www.meetup.com/topics/angularjs/",
+                "title": "Meetups",
+                "tooltip": "Attend a meetup and learn from fellow developers."
+            },
+            {
+                "url": "https://twitter.com/angular",
+                "title": "Twitter",
+                "tooltip": "Twitter"
+            },
+            {
+                "url": "https://github.com/angular/angular",
+                "title": "GitHub",
+                "tooltip": "GitHub"
+            },
+            {
+                "url": "#",
+                "title": "Contribute",
+                "tooltip": "Contribute to Angular"
+            }
+        ]
+    },
+    {
+        "title": "Languages",
+        "childNodes": [
+            {
+                "title": "Español",
+                "url": "http://docs.angular.lat/"
+            },
+            {
+                "title": "简体中文版",
+                "url": "https://angular.cn/"
+            },
+            {
+                "title": "正體中文版",
+                "url": "https://angular.tw/"
+            },
+            {
+                "title": "日本語版",
+                "url": "https://angular.jp/"
+            },
+            {
+                "title": "한국어",
+                "url": "https://angular.kr/"
+            },
+            {
+                "title": "Complete language list",
+                "url": "guide/localized-documentation"
+            }
+        ]
+    }
+]

@@ -1,0 +1,11 @@
+{
+    "ban-reviewed-conversions": [
+        "src/app/code/code.component.ts",
+        "src/app/code/code-pretty.service.ts",
+        "src/app/document/doc.service.ts",
+        "src/app/base/security.service.ts"
+    ],
+    "ban-worker-calls": [
+        "src/app/search/search.service.ts"
+    ]
+}

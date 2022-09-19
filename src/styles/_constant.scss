@@ -1,0 +1,77 @@
+// 字体
+$font-main: "Roboto", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif";
+$font-code: "Roboto Mono", "monospace";
+
+// Z层
+$layer-1: 1;
+$layer-2: 2;
+$layer-3: 3;
+$layer-4: 4;
+$layer-5: 5;
+
+// 颜色
+$color-cyan: #39D0FF;
+$color-blue: #1976D2;
+$color-blue-powder: #BAE0FF;
+$color-blue-light: #7FC9FF;
+$color-blue-warm: #7491FF;
+$color-blue-cold: #8CCADE;
+$color-blue-dark: #1669BB;
+$color-blue-accent: #1E88E5;
+$color-red-bright: #DD0031;
+$color-red-dark: #C3002F;
+$color-white: #FFFFFF;
+$color-white-off: #FAFAFA;
+$color-golden-light: #DDA302;
+$color-golden-dark: #C3A300;
+$color-gray-bg: #F1F1F1;
+$color-gray-thin: #F2F2F2;
+$color-gray-light: #DBDBDB;
+$color-gray-box: #EBEBEB;
+$color-gray-mist: #ECEFF1;
+$color-gray-medium: #6E6E6E;
+$color-gray-dark: #444444;
+$color-gray-deep: #333333;
+$color-black: #0A1014;
+$color-orange: #FF9800;
+$color-orange-dark: #994400;
+
+// 代码颜色
+$color-amber-200: #AA3000;
+$color-amber-700: #FFA000;
+$color-blue-400: #42A5F5;
+$color-blue-500: #2196F3;
+$color-blue-600: #1E88E5;
+$color-blue-800: #1565C0;
+$color-blue-900: #0D47A1;
+$color-blue-gray-50: #ECEFF1;
+$color-blue-gray-100: #CFD8DC;
+$color-blue-gray-200: #B0BEC5;
+$color-blue-gray-300: #90A4AE;
+$color-blue-gray-400: #78909C;
+$color-blue-gray-500: #607D8B;
+$color-blue-gray-600: #546E7A;
+$color-blue-gray-700: #455A64;
+$color-blue-gray-800: #37474F;
+$color-blue-gray-900: #263238;
+$color-green-200: #17FF0B;
+$color-green-500: #4CAF50;
+$color-green-800: #2E7D32;
+$color-green-600: #7CB342;
+$color-pink-600: #D81B60;
+$color-purple-600: #8E24AA;
+$color-teal-500: #009688;
+$color-gray-100: #F5F6F7;
+
+// 状态颜色
+$color-outline-dark: rgba($color-white, 0.8);
+$color-outline-light: $color-blue-accent;
+
+// 渐变色
+$color-gradient-blue: linear-gradient(145deg, $color-blue-900, $color-blue-400);
+$color-gradient-red: linear-gradient(145deg, $color-red-dark, $color-red-bright);
+
+// 断点宽度
+$breakpoint-width-small: 840px;
+$breakpoint-width-phone: 480px;
+$breakpoint-width-tablet: 800px;

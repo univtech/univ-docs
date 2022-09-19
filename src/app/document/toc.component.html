@@ -1,0 +1,38 @@
+<div *ngIf="tocType !== 'None'" class="toc-inner no-print" [class.collapsed]="isCollapsed">
+
+    <div *ngIf="tocType === 'EmbeddedSimple'" class="toc-heading embedded">内容</div>
+
+    <button *ngIf="tocType === 'EmbeddedExpandable'"
+            type="button"
+            class="toc-heading embedded secondary"
+            title="展开/折叠内容"
+            aria-label="展开/折叠内容"
+            [attr.aria-pressed]="!isCollapsed"
+            (click)="collapseTocItem(false)">
+        内容
+        <mat-icon class="rotating-icon" [class.collapsed]="isCollapsed" svgIcon="icon_fold"></mat-icon>
+    </button>
+
+    <ul class="toc-list" [class.embedded]="tocType !== 'Floating'">
+        <ng-container *ngFor="let tocItem of tocItems; let index = index">
+            <li #tocItemLi *ngIf="tocType === 'Floating' || tocItem.level !== 'h1'"
+                class="{{tocItem.level}}"
+                [class.secondary]="tocType === 'EmbeddedExpandable' && index >= maxPrimaryCount"
+                [class.active]="index === activeTocIndex"
+                title="{{tocItem.title}}">
+                <a [href]="tocItem.href" [innerHTML]="tocItem.content"></a>
+            </li>
+        </ng-container>
+    </ul>
+
+    <button *ngIf="tocType === 'EmbeddedExpandable'"
+            type="button"
+            class="toc-more-items embedded material-icons"
+            [class.collapsed]="isCollapsed"
+            title="展开/折叠内容"
+            aria-label="展开/折叠内容"
+            [attr.aria-pressed]="!isCollapsed"
+            (click)="collapseTocItem()">
+    </button>
+
+</div>

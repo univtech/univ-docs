@@ -1,0 +1,19 @@
+@use '../../constant';
+
+@mixin theme($theme) {
+    univ-notice {
+        background: constant.$color-gray-dark;
+
+        .close-button {
+            background: constant.$color-gray-dark;
+        }
+
+        .content {
+            background: constant.$color-gray-dark;
+
+            .action-button {
+                background: constant.$color-red-bright;
+            }
+        }
+    }
+}

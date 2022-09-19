@@ -1,0 +1,3 @@
+<input #searchBox type="search" aria-label="搜索" placeholder="搜索" (focus)="sendSearchText()"
+       (input)="changeSearchText()" (keyup)="changeSearchText()" (click)="changeSearchText()">
+<mat-icon *ngIf="searchBox.value" (click)="searchBox.value=''; searchBox.focus()">close</mat-icon>

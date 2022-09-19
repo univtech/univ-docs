@@ -1,0 +1,72 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $foreground: map.get($theme, foreground);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    univ-search-result {
+        .search-results {
+            background-color: constant.$color-gray-dark;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+
+            $item-color: if($is-dark-theme, constant.$color-white-off, constant.$color-gray-light);
+
+            .search-area {
+                .search-section-header {
+                    color: constant.$color-white;
+                }
+
+                ul {
+                    .search-result-item {
+                        color: $item-color;
+
+                        &:hover {
+                            color: constant.$color-white;
+                        }
+                    }
+                }
+            }
+
+            .no-results {
+                color: constant.$color-white;
+            }
+
+            a {
+                color: material.get-color-from-palette($foreground, text);
+            }
+
+            .close-button {
+                color: $item-color;
+            }
+        }
+
+        &.embedded {
+            .search-results {
+                .search-area {
+                    .search-section-header {
+                        color: constant.$color-gray-dark;
+                    }
+
+                    .search-result-item {
+                        color: if($is-dark-theme, constant.$color-white-off, color.adjust(constant.$color-gray-dark, $lightness: 10%));
+
+                        &:hover {
+                            color: constant.$color-blue-accent;
+                        }
+                    }
+                }
+
+                .no-results {
+                    color: material.get-color-from-palette($foreground, text);
+                }
+
+                a {
+                    color: constant.$color-blue;
+                }
+            }
+        }
+    }
+}

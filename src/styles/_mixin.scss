@@ -1,0 +1,147 @@
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:selector';
+@use './constant';
+
+// 调整REM字体大小
+@mixin font-size($size) {
+    font-size: ($size) + px;
+    font-size: math.div($size, 10) + rem;
+}
+
+// 调整REM字符间距
+@mixin letter-spacing($spacing) {
+    letter-spacing: ($spacing) + px;
+    letter-spacing: math.div($spacing, 10) + rem;
+}
+
+// 调整REM行高
+@mixin line-height($height) {
+    line-height: ($height) + px;
+    line-height: math.div($height, 10) + rem;
+}
+
+// 占位符，注意：带有厂商前缀的选择器必须位于单独的块中，因为一个无效或未知的选择器将会使整个块失效
+@mixin placeholder {
+    // IE浏览器
+    &:-ms-input-placeholder {
+        @content;
+    }
+    // Edge浏览器
+    &::-ms-input-placeholder {
+        @content;
+    }
+    // QQ浏览器
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    // Chrome、Firefox、Safari浏览器
+    &::placeholder {
+        @content;
+    }
+}
+
+// 旋转
+@mixin rotate($degree) {
+    -moz-transform: rotate($degree);
+    -webkit-transform: rotate($degree);
+    -o-transform: rotate($degree);
+    -ms-transform: rotate($degree);
+    transform: rotate($degree);
+    transition: transform 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+// 信息卡
+@mixin card($width) {
+    width: $width;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(constant.$color-black, 0.24), 0 0 2px rgba(constant.$color-black, 0.12);
+    box-sizing: border-box;
+    transition: box-shadow .5s;
+
+    &:hover {
+        box-shadow: 0 8px 8px rgba(constant.$color-black, 0.24), 0 0 8px rgba(constant.$color-black, 0.12);
+        text-decoration: none;
+    }
+}
+
+/**
+ * 嵌套选择器：混合页面
+ *
+ * 参数：
+ * $otherSelectors：待嵌套的其他选择器
+ * $nestParent：是否嵌套为父选择器，true，嵌套为父选择器；false：正常嵌套
+ *
+ * 示例：.test正常嵌套
+ * .test1 {
+ *     @include nest-selector-mix('.test') {
+ *         .test2 {
+ *             color: orange;
+ *         }
+ *     }
+ * }
+ * 结果：
+ * .test1 .test test2 {
+ *     color: orange;
+ * }
+ *
+ * 示例：.test嵌套为父选择器
+ * .test1 {
+ *     @include nest-selector-mix('.test', true) {
+ *         .test2 {
+ *             color: orange;
+ *         }
+ *     }
+ * }
+ * 结果：
+ * .test .test1 .test2 {
+ *     color: orange;
+ * }
+ */
+@mixin nest-selector-mix($otherSelectors: (), $nestParent: false) {
+    // mixture目录下的文档
+    $mixtureSelector: ('.folder-mixture');
+    $selectors: list.join($mixtureSelector, $otherSelectors, $separator: comma);
+    @if $nestParent and & {
+        @at-root #{selector.nest(#{$selectors}, &)} {
+            @content;
+        }
+    } @else {
+        #{$selectors} {
+            @content;
+        }
+    }
+}
+
+// 嵌套选择器：文档页面，参考：nest-selector-mix
+@mixin nest-selector-doc($nestParent: false) {
+    // 排除mixture和failure目录下的文档
+    $selector: ('[class*="folder-"]:not(.folder-mixture, .folder-failure)');
+    @if $nestParent and & {
+        @at-root #{selector.nest(#{$selector}, &)} {
+            @content;
+        }
+    } @else {
+        #{$selector} {
+            @content;
+        }
+    }
+}
+
+// 给外部链接添加图标
+@mixin add-external-link-icon() {
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+        // `content: "\e89e"`：`open_in_new`的代码点
+        content: "\e89e";
+        font-family: "Material Icons", serif;
+        margin-left: 0.3rem;
+        // `float: right`：使图标不继承文本下划线
+        float: right;
+        display: flex;
+        align-items: center;
+    }
+}

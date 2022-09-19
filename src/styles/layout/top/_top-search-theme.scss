@@ -1,0 +1,17 @@
+@use '../../constant';
+@use '../../mixin';
+
+@mixin theme($theme) {
+    mat-toolbar.toolbar {
+        univ-search-box.search-container {
+            input {
+                color: constant.$color-gray-dark;
+                background-color: constant.$color-white;
+
+                @include mixin.placeholder {
+                    color: constant.$color-gray-medium;
+                }
+            }
+        }
+    }
+}

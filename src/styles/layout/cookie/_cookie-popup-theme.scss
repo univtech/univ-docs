@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    univ-cookie-popup {
+        .cookie-popup {
+            background: if($is-dark-theme, map.get(material.$grey-palette, 50), #252525);
+            color: if($is-dark-theme, map.get(map.get(material.$grey-palette, contrast), 50), map.get(material.$dark-theme-foreground-palette, secondary-text));
+
+            .actions {
+                .mat-button {
+                    color: if($is-dark-theme, constant.$color-blue, constant.$color-blue-light);
+
+                    .mat-button-focus-overlay {
+                        background: if($is-dark-theme, constant.$color-black, constant.$color-white);
+                    }
+                }
+            }
+        }
+    }
+}

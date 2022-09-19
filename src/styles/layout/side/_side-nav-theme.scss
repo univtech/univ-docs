@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $background: map.get($theme, background);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    mat-sidenav-container.sidenav-container {
+        background-color: if($is-dark-theme, material.get-color-from-palette($background, background), constant.$color-white);
+
+        mat-sidenav.sidenav {
+            background-color: if($is-dark-theme, constant.$color-gray-deep, constant.$color-gray-thin);
+            border-right: 1px solid if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+        }
+    }
+}

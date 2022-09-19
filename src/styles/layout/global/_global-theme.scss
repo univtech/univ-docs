@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $background: map.get($theme, background);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    html,
+    body,
+    .content {
+        background: if($is-dark-theme, material.get-color-from-palette($background, background), constant.$color-white);
+    }
+
+    @if $is-dark-theme {
+        :root {
+            color-scheme: dark;
+        }
+    }
+
+    .github-links {
+        .material-icons {
+            &:hover {
+                background-color: constant.$color-gray-mist;
+            }
+        }
+    }
+}

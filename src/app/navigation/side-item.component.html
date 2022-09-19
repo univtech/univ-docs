@@ -1,0 +1,21 @@
+<div *ngIf="!navNode.childNodes || navNode.childNodes.length === 0">
+    <a class="vertical-menu-item" [ngClass]="classes" title="{{navNode.tooltip}}" href="{{navNode.url}}">
+        <span class="vertical-menu-item-text">{{navNode.title}}</span>
+    </a>
+</div>
+
+<div *ngIf="navNode.childNodes && navNode.childNodes.length !== 0">
+    <a *ngIf="navNode.url != null" class="vertical-menu-item heading" [ngClass]="classes" title="{{navNode.tooltip}}" href="{{navNode.url}}" (click)="clickNode()">
+        <span>{{navNode.title}}</span>
+        <mat-icon class="rotating-icon" svgIcon="icon_fold"></mat-icon>
+    </a>
+
+    <button *ngIf="navNode.url == null" type="button" class="vertical-menu-item heading" [ngClass]="classes" title="{{navNode.tooltip}}" [attr.aria-pressed]="isExpanded" (click)="clickNode()">
+        <span>{{navNode.title}}</span>
+        <mat-icon class="rotating-icon" svgIcon="icon_fold"></mat-icon>
+    </button>
+
+    <div class="heading-children" [ngClass]="classes">
+        <univ-side-item *ngFor="let childNode of childNodes" [level]="level + 1" [navNode]="childNode" [traceNodes]="traceNodes" [isWideScreen]="isWideScreen" [isExpandedParent]="isExpanded"></univ-side-item>
+    </div>
+</div>

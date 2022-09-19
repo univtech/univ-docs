@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .nf-response {
+        h1 {
+            color: if($is-dark-theme, constant.$color-blue-light, constant.$color-blue);
+        }
+    }
+
+    .nf-icon.material-icons {
+        color: constant.$color-blue;
+    }
+}

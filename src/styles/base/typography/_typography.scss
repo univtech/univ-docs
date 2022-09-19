@@ -1,0 +1,218 @@
+@use '../../constant';
+@use '../../mixin';
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: constant.$font-main;
+    margin: 0;
+    @include mixin.font-size(16);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+h1 {
+    @include mixin.font-size(40);
+    display: inline-block;
+    margin: 1.6rem 0;
+
+    @media screen and (max-width: 600px) {
+        margin-top: 0;
+    }
+}
+
+h2 {
+    clear: both;
+    @include mixin.font-size(32);
+    margin-top: 4rem;
+    padding-top: 4rem;
+
+    @include mixin.nest-selector-mix($nestParent: true) {
+        border-top: 0;
+        margin-top: 2rem;
+        padding-top: 0;
+    }
+}
+
+h3 {
+    @include mixin.font-size(24);
+    margin-top: 3rem;
+    clear: both;
+}
+
+h4 {
+    @include mixin.font-size(20);
+    margin-top: 3rem;
+    clear: both;
+}
+
+h5 {
+    @include mixin.font-size(18);
+    margin-top: 2rem;
+    clear: both;
+}
+
+h6 {
+    @include mixin.font-size(16);
+    margin-top: 2rem;
+    clear: both;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    a {
+        font-size: inherit;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 8px 0;
+    }
+}
+
+.mat-tab-body-wrapper h2 {
+    margin-top: 0;
+}
+
+p,
+ol,
+ul,
+li,
+input,
+a {
+    @include mixin.font-size(16);
+    @include mixin.line-height(32);
+    font-family: inherit;
+    font-weight: 400;
+
+    & > em {
+        @include mixin.letter-spacing(0.3);
+    }
+}
+
+p {
+    margin: 1em 0;
+}
+
+p + ul {
+    margin-top: 4px;
+}
+
+ol {
+    li,
+    p {
+        margin: 4px 0;
+    }
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+
+    ol {
+        list-style-type: lower-roman;
+    }
+}
+
+li {
+    padding-bottom: 8px;
+    @include mixin.line-height(24);
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        line-height: inherit;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.toolbar a {
+    @include mixin.font-size(16);
+    font-weight: 400;
+    font-family: constant.$font-main;
+    text-transform: uppercase;
+}
+
+strong {
+    font-weight: 500;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 2px;
+    border-spacing: 0;
+    margin: 12px 0 32px;
+}
+
+table tbody th {
+    max-width: 100px;
+    padding: 13px 32px;
+    text-align: left;
+}
+
+td {
+    font-weight: 400;
+    padding: 8px 30px;
+
+    > p,
+    ul {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+th {
+    @include mixin.font-size(16);
+    font-weight: 500;
+    padding: 13px 32px;
+    text-align: left;
+}
+
+code {
+    font-family: constant.$font-code;
+    font-size: 90%;
+}
+
+.sidenav-content a {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// 当univ-doc-view组件显示不同文档区域的文档时，基于应用于univ-doc-view组件的CSS类，给文档区域中以http:或https:为开头的绝对外部链接添加图标
+@include mixin.nest-selector-doc {
+    univ-doc-view {
+        // 不给.github-links类标记的GitHub链接添加图标
+        :not(.github-links) {
+            > a {
+                &[href^="http:"],
+                &[href^="https:"] {
+                    @include mixin.add-external-link-icon();
+                }
+            }
+        }
+    }
+}

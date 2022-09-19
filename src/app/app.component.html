@@ -1,0 +1,80 @@
+<div id="top-of-page"></div>
+
+<univ-cookie-popup></univ-cookie-popup>
+
+<a class="skip-to-content-link" href="#main-content">跳到主要内容</a>
+
+<div *ngIf="isFetching" class="progress-bar-container">
+    <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
+</div>
+
+<header>
+    <mat-toolbar #toolbar color="primary" class="toolbar no-print" [class.transitioning]="isTransitioning">
+        <mat-toolbar-row class="notice-container">
+            <univ-notice noticeId="noticeId" (noticeClosed)="handleNoticeClosed()"></univ-notice>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+            <button mat-button class="hamburger" [class.no-animations]="animationDisabled" title="侧边菜单" (click)="sideNav.toggle()">
+                <mat-icon svgIcon="icon_menu"></mat-icon>
+            </button>
+
+            <a class="nav-link home" href="/" [ngSwitch]="showTopMenu">
+                <img *ngSwitchCase="true" title="首页" alt="首页" width="150" height="40" src="assets/images/logos/univ-nav.png">
+                <img *ngSwitchDefault title="首页" alt="首页" width="37" height="40" src="assets/images/logos/univ-large.svg">
+            </a>
+
+            <univ-top-menu *ngIf="showTopMenu" [navNodes]="topNavNodes" [currNode]="topCurrNode"></univ-top-menu>
+
+            <univ-search-box #searchBox class="search-container" (textChanged)="searchIndex($event)" (boxFocused)="searchIndex($event, true)"></univ-search-box>
+
+            <univ-theme-toggle #themeToggle></univ-theme-toggle>
+
+            <div #externalIcons class="toolbar-external-icons-container">
+                <a mat-icon-button href="https://github.com/angular/angular" title="GitHub" aria-label="GitHub">
+                    <mat-icon svgIcon="logos:icon_github"></mat-icon>
+                </a>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+
+<univ-search-result *ngIf="showSearchResult"
+                    #searchResult
+                    [searchResults]="searchResults | async"
+                    [navNodes]="topNavNodes"
+                    (resultSelected)="hideSearchResult()"
+                    (navSelected)="hideSearchResult()"
+                    (resultClosed)="hideSearchResult()">
+</univ-search-result>
+
+<mat-sidenav-container class="sidenav-container" [class.no-animations]="animationDisabled" [class.has-floating-toc]="hasFloatToc">
+
+    <mat-sidenav #sideNav class="sidenav" [ngClass]="{'collapsed': !showSideNav}" [mode]="sideNavMode" [opened]="sideNavOpened" (openedChange)="updateHostClasses()">
+        <univ-side-menu *ngIf="!showTopMenu" navLabel="菜单" [navNodes]="topNarrNavNodes" [currNode]="topNarrCurrNode" [isWideScreen]="showSideNav"></univ-side-menu>
+        <univ-side-menu navLabel="文档" [navNodes]="sideNavNodes" [currNode]="sideCurrNode" [isWideScreen]="showSideNav"></univ-side-menu>
+    </mat-sidenav>
+
+    <section class="sidenav-content-container">
+        <main class="sidenav-content" [id]="pageId">
+            <div id="main-content" tabindex="-1"></div>
+            <univ-doc-view [class.no-animations]="animationDisabled"
+                           [currNode]="topCurrNode"
+                           [currDoc]="currDoc"
+                           (currDocReady)="handleCurrDocReady()"
+                           (currDocInserted)="handleCurrDocInserted()"
+                           (currDocRendered)="handleCurrDocRendered()"
+                           (prevDocRemoved)="handlePrevDocRemoved()">
+            </univ-doc-view>
+        </main>
+
+        <div *ngIf="hasFloatToc" class="toc-container no-print" [style.max-height.px]="maxTocHeight" (wheel)="handleMouseWheel($event)">
+            <univ-element-lazy selector="univ-toc"></univ-element-lazy>
+        </div>
+    </section>
+
+    <footer class="no-print">
+        <univ-footer [navNodes]="footerNavNodes"></univ-footer>
+    </footer>
+
+</mat-sidenav-container>

@@ -1,0 +1,33 @@
+mat-toolbar.toolbar {
+    .nav-link.home {
+        cursor: pointer;
+        margin: 0 16px 0 0;
+        padding: 8px 0;
+
+        &:focus {
+            // outline-style为auto时，outline-offset不适用于Windows上的Chrome浏览器
+            outline-offset: 4px;
+        }
+
+        @media screen and (max-width: 1149px) {
+            padding: 4px 0;
+        }
+
+        @media screen and (max-width: 480px) {
+            margin-right: 8px;
+        }
+
+        img {
+            position: relative;
+            margin-top: -21px;
+            top: 12px;
+            height: 40px;
+
+            @media (max-width: 1149px) {
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

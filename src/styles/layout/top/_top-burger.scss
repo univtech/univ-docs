@@ -1,0 +1,40 @@
+@use '../../constant';
+@use '../../mixin';
+
+mat-toolbar.toolbar {
+    @include mixin.nest-selector-doc($nestParent: true) {
+        @media (min-width: 1150px) {
+            .hamburger {
+                // 大屏时文档页面显示面包屑按钮
+                margin: 0 8px 0 0;
+                visibility: visible;
+            }
+        }
+    }
+
+    .hamburger {
+        height: 100%;
+        margin: 0 8px 0 0;
+        padding: 0;
+
+        @media (min-width: 1150px) {
+            // 大屏时默认隐藏面包屑按钮，只在文档页面显示
+            margin: 0 16px 0 -64px;
+            visibility: hidden;
+        }
+
+        @media (max-width: 480px) {
+            min-width: 15%;
+        }
+
+        &:not(.no-animations) {
+            transition-duration: 0.4s;
+            transition-property: color, margin;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        & .mat-icon {
+            position: inherit;
+        }
+    }
+}

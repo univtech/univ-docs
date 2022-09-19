@@ -1,0 +1,79 @@
+[
+    {
+        "title": "单页面",
+        "url": "single",
+        "noSideNav": true
+    },
+    {
+        "title": "HTML",
+        "url": "html",
+        "noSideNav": true,
+        "childNodes": [
+            {
+                "title": "HTML1",
+                "url": "html1"
+            },
+            {
+                "title": "HTML2",
+                "url": "html2"
+            },
+            {
+                "title": "HTML3",
+                "url": "html3"
+            },
+            {
+                "title": "HTML4",
+                "url": "html4"
+            },
+            {
+                "title": "HTML5",
+                "url": "#",
+                "noSideNav": true
+            },
+            {
+                "title": "HTML6",
+                "url": "#",
+                "noSideNav": true
+            },
+            {
+                "title": "HTML7",
+                "url": "#",
+                "noSideNav": true
+            },
+            {
+                "title": "HTML8",
+                "url": "#",
+                "noSideNav": true
+            },
+            {
+                "title": "HTML9",
+                "url": "#",
+                "noSideNav": true
+            },
+            {
+                "title": "HTML10",
+                "url": "#",
+                "noSideNav": true
+            }
+        ]
+    },
+    {
+        "title": "CSS",
+        "url": "css",
+        "noSideNav": true,
+        "childNodes": [
+            {
+                "title": "CSS1",
+                "url": "css1"
+            },
+            {
+                "title": "CSS2",
+                "url": "css2"
+            },
+            {
+                "title": "CSS3",
+                "url": "css3"
+            }
+        ]
+    }
+]

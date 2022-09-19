@@ -1,0 +1,11 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .reviewed {
+        color: if($is-dark-theme, constant.$color-white-off, color.adjust(constant.$color-gray-dark, $lightness: 10%));
+    }
+}

@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .content {
+        .lightbox {
+            border: 1px solid if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+            background-color: if($is-dark-theme, constant.$color-gray-deep, constant.$color-gray-box);
+
+            img {
+                background-color: constant.$color-white;
+            }
+        }
+    }
+}

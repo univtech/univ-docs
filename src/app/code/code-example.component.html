@@ -1,0 +1,15 @@
+<!-- 内容投影用于获取组件的HTML内容 -->
+<div #content style="display: none">
+    <ng-content></ng-content>
+</div>
+
+<header *ngIf="header">{{header}}</header>
+
+<univ-code [ngClass]="classes"
+           [header]="header"
+           [language]="language"
+           [linenum]="linenum"
+           [path]="path"
+           [region]="region"
+           [hideCopy]="hideCopy">
+</univ-code>

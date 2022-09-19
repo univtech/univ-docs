@@ -1,0 +1,18 @@
+<div class="grid-fluid">
+    <div class="footer-block" *ngFor="let navNode of navNodes">
+        <div class="footer-block-heading">{{navNode.title}}</div>
+        <ul *ngIf="navNode.childNodes && navNode.childNodes.length !== 0">
+            <li *ngFor="let childNode of navNode.childNodes">
+                <a class="link" [title]="childNode.tooltip" [href]="childNode.url">{{childNode.title}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p>
+    技术支持：Univ技术 ©2022-2030。
+</p>
+<p>
+    代码许可：<a title="代码许可协议" href="license">MIT许可协议</a>；
+    文档许可：<a href="https://creativecommons.org/licenses/by/4.0/">CC4.0许可协议</a>。
+</p>

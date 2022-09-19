@@ -1,0 +1,153 @@
+@use './constant';
+@use './mixin';
+
+@media print {
+    // 通用调整
+    * {
+        box-shadow: none !important;
+    }
+
+    body,
+    mat-sidenav-container {
+        background: none !important;
+    }
+
+    h1 {
+        height: 40px !important;
+        color: constant.$color-gray-dark !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
+
+    univ-code-example,
+    ul,
+    ol,
+    img,
+    table,
+    tr,
+    .alert,
+    .feature,
+    .lightbox {
+        page-break-inside: avoid;
+    }
+
+    table tbody tr:last-child td {
+        border-bottom: 1px solid constant.$color-gray-light !important;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p {
+        widows: 4;
+    }
+
+    p > code,
+    li > code,
+    table code {
+        color: constant.$color-blue !important;
+    }
+
+    // 不打印
+    .no-print {
+        display: none !important;
+    }
+
+    // 不打印侧边菜单
+    mat-sidenav.sidenav.mat-sidenav {
+        display: none !important;
+    }
+
+    // 不打印元素调整
+    .mat-sidenav-content {
+        margin: 0 !important;
+    }
+
+    mat-sidenav-container.sidenav-container {
+        min-width: 100vw;
+    }
+
+    .sidenav-content {
+        overflow: visible;
+    }
+
+    section#intro {
+        .hero-logo {
+            align-items: center;
+            background: none;
+            justify-content: center;
+
+            &::after {
+                @include mixin.font-size(64);
+                @include mixin.line-height(100);
+
+                color: constant.$color-red-bright;
+                content: 'Univ文档';
+                font-weight: bold;
+            }
+        }
+    }
+
+    .file-tree {
+        max-width: 100%;
+    }
+
+    univ-code code {
+        border: none !important;
+    }
+
+    univ-code-example {
+        &[language=shell],
+        &[language=sh],
+        &[language=bash] {
+            background: none;
+
+            .pnk,
+            .blk,
+            .pln,
+            .otl,
+            .kwd,
+            .typ,
+            .tag,
+            .str,
+            .atv,
+            .atn,
+            .com,
+            .lit,
+            .pun,
+            .dec {
+                color: constant.$color-gray-dark;
+            }
+        }
+
+        header {
+            background: none;
+            border: 0.5px solid constant.$color-gray-light;
+            color: constant.$color-gray-dark;
+        }
+    }
+
+    .content code {
+        border: 0.5px solid constant.$color-gray-light;
+    }
+
+    .mat-tab-labels {
+        div.mat-tab-label {
+            &:not(.mat-tab-label-active) span {
+                font-style: italic;
+            }
+
+            &.mat-tab-label-active span {
+                font-weight: bold;
+            }
+        }
+    }
+}
