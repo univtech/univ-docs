@@ -4,6 +4,8 @@ import {MatDrawerMode, MatSidenav} from '@angular/material/sidenav';
 import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {first, map} from 'rxjs/operators';
 
+import {Authorize} from './config/config.model';
+import {ConfigService} from './config/config.service';
 import {CurrNode, NavNode} from './navigation/nav.model';
 import {NavService} from './navigation/nav.service';
 import {DocSafe} from './document/doc.model';
@@ -71,6 +73,9 @@ export class AppComponent implements OnInit {
 
     // 底部导航节点
     footerNavNodes: NavNode[];
+
+    // 授权信息
+    authorize: Authorize;
 
     // 当前路径
     private currPath: string;
@@ -163,6 +168,7 @@ export class AppComponent implements OnInit {
      * @param deployService 部署服务
      * @param locationService 地址服务
      * @param serviceWorkerService ServiceWorker服务
+     * @param configService 配置服务
      * @param navService 导航服务
      * @param docService 文档服务
      * @param tocService 目录服务
@@ -173,6 +179,7 @@ export class AppComponent implements OnInit {
                 private deployService: DeployService,
                 private locationService: LocationService,
                 private serviceWorkerService: ServiceWorkerService,
+                private configService: ConfigService,
                 private navService: NavService,
                 private docService: DocService,
                 private tocService: TocService,
@@ -217,6 +224,10 @@ export class AppComponent implements OnInit {
 
         this.navService.footerNavNodes.subscribe(footerNavNodes => {
             this.footerNavNodes = footerNavNodes || [];
+        });
+
+        this.configService.authorize.subscribe(authorize => {
+            this.authorize = authorize;
         });
 
         const hasTocItem = this.tocService.tocItems.pipe(map(tocItems => tocItems.length > 0));

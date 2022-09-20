@@ -26,6 +26,7 @@ import {storageProviders} from './base/storage.service';
 import {windowProvider, windowToken} from './base/window.service';
 import {currentDateProvider, currentDateToken} from './base/date.service';
 
+import {ConfigService} from './config/config.service';
 import {LocationService} from './navigation/location.service';
 import {NavService} from './navigation/nav.service';
 import {TopMenuComponent} from './navigation/top-menu.component';
@@ -85,6 +86,7 @@ import {AppComponent} from './app.component';
         GoogleService,
         DeployService,
         LocationService,
+        ConfigService,
         NavService,
         DocService,
         TocService,
