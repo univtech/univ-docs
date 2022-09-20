@@ -47,17 +47,32 @@ export class DocService {
      * @return 文档
      */
     private getDoc(docPath: string): Observable<DocSafe> {
-        let docId = docPath;
-        if (this.navService.noSideNavUrls.includes(docId)) {
-            docId = docId ? `mixture/${docId}` : 'mixture/index';
-        } else if (this.navService.hasSideNavUrls.includes(docId)) {
-            docId = `${docId}/${docId}`;
-        }
-
+        const docId = this.getDocId(docPath);
         if (!this.docMap.has(docId)) {
             this.docMap.set(docId, this.getDocContent(docId));
         }
         return this.docMap.get(docId) as Observable<DocSafe>;
+    }
+
+    /**
+     * 获取文档id
+     *
+     * @param docPath 文档路径
+     * @return 文档id
+     */
+    private getDocId(docPath: string): string {
+        let docId = docPath;
+        if (this.navService.noSideNavUrls.includes(docId)) {
+            if (!docId) {
+                docId = 'index';
+            }
+            if (!docId.startsWith('mixture/')) {
+                docId = `mixture/${docId}`;
+            }
+        } else if (this.navService.hasSideNavUrls.includes(docId)) {
+            docId = `${docId}/${docId}`;
+        }
+        return docId;
     }
 
     /**

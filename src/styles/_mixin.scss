@@ -101,7 +101,7 @@
  */
 @mixin nest-selector-mix($otherSelectors: (), $nestParent: false) {
     // mixture目录下的文档
-    $mixtureSelector: ('.folder-mixture');
+    $mixtureSelector: ('.folder-mixture:not(.page-mixture-license)');
     $selectors: list.join($mixtureSelector, $otherSelectors, $separator: comma);
     @if $nestParent and & {
         @at-root #{selector.nest(#{$selectors}, &)} {
