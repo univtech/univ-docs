@@ -19,13 +19,13 @@ export class NavService {
     // 底部导航文件
     private footerNavFile = 'content/navigation/footer.json';
 
-    // 顶部导航目录
+    // 顶部导航节点
     topNavNodes: Observable<NavNode[]>;
 
     // 顶部当前节点、侧边导航节点和侧边当前节点
     topSideNode: Observable<TopSideNode>;
 
-    // 底部导航目录
+    // 底部导航节点
     footerNavNodes: Observable<NavNode[]>;
 
     // 有侧边导航节点路径
@@ -70,40 +70,50 @@ export class NavService {
     private getTopSideNode(): Observable<TopSideNode> {
         const currNodeObservable = combineLatest([
             this.locationService.currPath,
-            this.topNavNodes.pipe(map(navNodes => this.getTopSideNodes(navNodes))),
+            this.topNavNodes.pipe(map(navNodes => this.getTopSideNodeMap(navNodes))),
         ]).pipe(
-            map(([currPath, topSideNodeMap]) => {
-                const topNavUrl = this.hasSideNavUrls.find(url => currPath.startsWith(url));
-
-                let topCurrNode = topSideNodeMap.topCurrNodeMap.get(currPath);
-                if (!topCurrNode && topNavUrl) {
-                    topCurrNode = topSideNodeMap.topCurrNodeMap.get(topNavUrl);
-                }
-
-                let sideNavNodes = topSideNodeMap.sideNavNodeMap.get(currPath);
-                if (!sideNavNodes && topNavUrl) {
-                    sideNavNodes = topSideNodeMap.sideNavNodeMap.get(topNavUrl);
-                }
-
-                let sideCurrNode = topSideNodeMap.sideCurrNodeMap.get(currPath);
-                if (!sideCurrNode && this.hasSideNavUrls.includes(currPath)) {
-                    sideCurrNode = topSideNodeMap.sideCurrNodeMap.get(`${currPath}/${currPath}`);
-                }
-
-                return {topCurrNode, sideNavNodes, sideCurrNode};
-            }),
-            publishReplay(1));
+            map(([currPath, topSideNodeMap]) => this.getTopSideNodeCurr(currPath, topSideNodeMap)),
+            publishReplay(1)
+        );
         (currNodeObservable as ConnectableObservable<TopSideNode>).connect();
         return currNodeObservable;
     }
 
     /**
-     * 获取顶部当前节点、侧边导航节点和侧边当前节点
+     * 根据当前路径获取顶部当前节点、侧边导航节点和侧边当前节点
+     *
+     * @param currPath 当前路径
+     * @param topSideNodeMap 顶部当前节点、侧边导航节点和侧边当前节点映射
+     * @return 顶部当前节点、侧边导航节点和侧边当前节点
+     */
+    private getTopSideNodeCurr(currPath: string, topSideNodeMap: TopSideNodeMap): TopSideNode {
+        const topNavUrl = this.hasSideNavUrls.find(url => currPath.startsWith(url));
+
+        let topCurrNode = topSideNodeMap.topCurrNodeMap.get(currPath);
+        if (!topCurrNode && topNavUrl) {
+            topCurrNode = topSideNodeMap.topCurrNodeMap.get(topNavUrl);
+        }
+
+        let sideNavNodes = topSideNodeMap.sideNavNodeMap.get(currPath);
+        if (!sideNavNodes && topNavUrl) {
+            sideNavNodes = topSideNodeMap.sideNavNodeMap.get(topNavUrl);
+        }
+
+        let sideCurrNode = topSideNodeMap.sideCurrNodeMap.get(currPath);
+        if (!sideCurrNode && this.hasSideNavUrls.includes(currPath)) {
+            sideCurrNode = topSideNodeMap.sideCurrNodeMap.get(`${currPath}/${currPath}`);
+        }
+
+        return {topCurrNode, sideNavNodes, sideCurrNode};
+    }
+
+    /**
+     * 获取顶部当前节点、侧边导航节点和侧边当前节点映射
      *
      * @param topNavNodes 顶部导航节点
      * @return 顶部当前节点、侧边导航节点和侧边当前节点映射
      */
-    private getTopSideNodes(topNavNodes: NavNode[]): TopSideNodeMap {
+    private getTopSideNodeMap(topNavNodes: NavNode[]): TopSideNodeMap {
         const topCurrNodeMap = new Map<string, CurrNode>();
         const sideNavNodeMap = new Map<string, NavNode[]>();
         const sideCurrNodeMap = new Map<string, CurrNode>();
