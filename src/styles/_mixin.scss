@@ -100,7 +100,7 @@
  * }
  */
 @mixin nest-selector-mix($otherSelectors: (), $nestParent: false) {
-    // mixture目录下的文档
+    // mixture目录下的文档，排除license页面
     $mixtureSelector: ('.folder-mixture:not(.page-mixture-license)');
     $selectors: list.join($mixtureSelector, $otherSelectors, $separator: comma);
     @if $nestParent and & {
