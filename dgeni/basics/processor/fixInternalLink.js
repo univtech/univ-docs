@@ -1,5 +1,5 @@
 /**
- * 在hash开头的内部链接上添加文档路径的处理器
+ * 去掉索引页面内部链接上的`/index`
  */
 module.exports = function fixInternalLink() {
     return {
