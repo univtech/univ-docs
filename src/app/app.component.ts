@@ -338,7 +338,7 @@ export class AppComponent implements OnInit {
      * @param ctrlPressed 是否按下Ctrl键，true：按下了Ctrl键；false：没有按下Ctrl键
      * @param metaPressed 是否按下窗口键，true：按下了窗口键；false：没有按下窗口键
      * @param altPressed 是否按下Alt键，true：按下了Alt键；false：没有按下Alt键
-     * @return 让浏览器处理链接的点击事件；false：使用gotoUrl进行导航，浏览器不需要处理链接的点击事件
+     * @return true：让浏览器处理链接的点击事件；false：使用gotoUrl进行导航，浏览器不需要处理链接的点击事件
      */
     @HostListener('click', ['$event.target', '$event.button', '$event.ctrlKey', '$event.metaKey', '$event.altKey'])
     handleElementClick(targetElement: HTMLElement, mouseClicks: number, ctrlPressed: boolean, metaPressed: boolean, altPressed: boolean): boolean {
