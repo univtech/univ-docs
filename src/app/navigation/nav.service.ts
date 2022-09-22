@@ -183,7 +183,8 @@ export class NavService {
      * @param sideNavNodeMap 侧边导航节点映射，key：顶部导航路径；value：侧边导航节点
      */
     private getSideNavNodesByUrl(topNavUrl: string, sideNavNodeMap: Map<string, Observable<NavNode[]>>): void {
-        const sideNavFile = `${this.sideNavFile}${topNavUrl}.json`;
+        const fileSuffix = topNavUrl.replace(/\//g, '-');
+        const sideNavFile = `${this.sideNavFile}${fileSuffix}.json`;
         sideNavNodeMap.set(topNavUrl, this.getNavNodes(sideNavFile));
     }
 
