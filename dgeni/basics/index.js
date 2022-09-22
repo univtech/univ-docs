@@ -29,16 +29,17 @@ const {
 module.exports = new Package('basics', [dgeniGit, dgeniJsdoc, dgeniNunjucks, dgeniPostProcessHtml, markdown])
 
     // 注册处理器
-    .processor(require('./processor/generateSearchData'))
-    .processor(require('./processor/generateSitemap'))
-    .processor(require('./processor/checkBacktickPair'))
-    .processor(require('./processor/convertDocToJson'))
-    .processor(require('./processor/addPathToInternalLink'))
-    .processor(require('./processor/copyFolders'))
-    .processor(require('./processor/addLinkComment'))
-    .processor(require('./processor/checkDocProperty'))
     .processor(require('./processor/splitDocDescription'))
     .processor(require('./processor/convertOutputPath'))
+    .processor(require('./processor/generateSitemap'))
+    .processor(require('./processor/copyFolders'))
+    .processor(require('./processor/generateSearchData'))
+    .processor(require('./processor/checkBacktickPair'))
+    .processor(require('./processor/addPathToInternalLink'))
+    .processor(require('./processor/fixInternalLink'))
+    .processor(require('./processor/addLinkComment'))
+    .processor(require('./processor/convertDocToJson'))
+    .processor(require('./processor/checkDocProperty'))
 
     // 注册后处理器
     .factory(require('./post-processor/addImageSize'))
