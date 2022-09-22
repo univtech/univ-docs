@@ -89,7 +89,7 @@ export class DocService {
                 docId = `mixture/${docId}`;
             }
         } else if (this.topNavHolder.hasSideNavUrls.includes(docId)) {
-            docId = `${docId}/${docId}`;
+            docId = `${docId}/index`;
         }
         return docId;
     }

@@ -233,7 +233,7 @@ export class NavService {
         let sideCurrNode = sideCurrNodeMap.get(currPath);
         if (!sideCurrNode && topNavHolder.hasSideNavUrls.includes(currPath)) {
             // 当前地址可能是顶部导航路径
-            sideCurrNode = sideCurrNodeMap.get(`${currPath}/${currPath}`);
+            sideCurrNode = sideCurrNodeMap.get(`${currPath}/index`);
         }
         return sideCurrNode;
     }
