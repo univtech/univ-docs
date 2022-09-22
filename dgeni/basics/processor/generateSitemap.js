@@ -27,7 +27,7 @@ module.exports = function generateSitemap() {
                     .filter(doc => doc.outputPath)
                     .filter(doc => !this.ignoreDocTypes.includes(doc.docType))
                     .filter(doc => !this.ignoreDocPaths.includes(doc.path))
-                    .map(doc => doc.path)
+                    .map(doc => doc.path.replace(/mixture\/index$/, '').replace(/\/index$/, ''))
             });
         }
     };

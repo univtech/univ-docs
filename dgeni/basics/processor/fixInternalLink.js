@@ -6,10 +6,10 @@ module.exports = function fixInternalLink() {
         $runAfter: ['checkAnchorLinksProcessor'],
         $runBefore: ['addLinkComment'],
         $process: function(docs) {
-            const internalLink = /(<a title="链接到此标题" [^>]*\/index)(#[^"]*)/g;
+            const internalLink = /(<a [^>]*\/index)(#[^"]*)/g;
             docs.forEach(doc => {
                 doc.renderedContent = doc.renderedContent.replace(internalLink, (_, prefix, hash) => {
-                    return prefix.replace(/\/index$/, '') + hash;
+                    return prefix.replace(/mixture\/index$/, '').replace(/\/index$/, '') + hash;
                 });
             });
         }

@@ -67,7 +67,7 @@ module.exports = function generateSearchData() {
                 words: Array.from(keywordMap.keys()).join(' '),
                 pages: filteredDocs.map(doc => {
                     const page = {
-                        path: doc.path,
+                        path: doc.path.replace(/mixture\/index$/, '').replace(/\/index$/, ''),
                         type: doc.docType,
                         title: doc.searchTitle,
                     };
