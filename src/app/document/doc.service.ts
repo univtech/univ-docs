@@ -82,11 +82,8 @@ export class DocService {
     private getDocId(docPath: string): string {
         let docId = docPath;
         if (this.topNavHolder.noSideNavUrls.includes(docId)) {
-            if (!docId) {
-                docId = 'index';
-            }
-            if (!docId.startsWith('mixture/')) {
-                docId = `mixture/${docId}`;
+            if (['', 'index'].includes(docId)) {
+                docId = 'mixture/index';
             }
         } else if (this.topNavHolder.hasSideNavUrls.includes(docId)) {
             docId = `${docId}/index`;

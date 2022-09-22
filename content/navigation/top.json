@@ -1,12 +1,12 @@
 [
     {
         "title": "单页面",
-        "url": "single",
+        "url": "mixture/single",
         "noSideNav": true
     },
     {
         "title": "HTML",
-        "url": "html",
+        "url": "mixture/html",
         "noSideNav": true,
         "childNodes": [
             {
@@ -59,7 +59,7 @@
     },
     {
         "title": "CSS",
-        "url": "css",
+        "url": "mixture/css",
         "noSideNav": true,
         "childNodes": [
             {
