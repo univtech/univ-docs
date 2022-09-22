@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
-import {AsyncSubject, Observable, of} from 'rxjs';
+import {AsyncSubject, combineLatest, Observable, of} from 'rxjs';
 import {catchError, map, switchMap, tap} from 'rxjs/operators';
 import {htmlSafeByReview} from 'safevalues/restricted/reviewed';
 
 import {LogService} from '../base/log.service';
+import {TopNavHolder} from '../navigation/nav.model';
 import {NavService} from '../navigation/nav.service';
 import {LocationService} from '../navigation/location.service';
 import {doc404Id, docFailId, DocSafe, DocUnsafe} from './doc.model';
@@ -25,6 +26,9 @@ export class DocService {
     // 当前文档
     currDoc: Observable<DocSafe>;
 
+    // 顶部导航持有者
+    private topNavHolder: TopNavHolder;
+
     /**
      * 构造函数，创建文档服务
      *
@@ -36,8 +40,23 @@ export class DocService {
     constructor(private httpClient: HttpClient,
                 private logService: LogService,
                 private navService: NavService,
-                locationService: LocationService) {
-        this.currDoc = locationService.currPath.pipe(switchMap(currPath => this.getDoc(currPath)));
+                private locationService: LocationService) {
+        this.initData();
+    }
+
+    /**
+     * 初始化数据
+     */
+    private initData() {
+        this.currDoc = combineLatest([
+            this.locationService.currPath,
+            this.navService.topNavHolder
+        ]).pipe(
+            switchMap(([currPath, topNavHolder]) => {
+                this.topNavHolder = topNavHolder;
+                return this.getDoc(currPath);
+            })
+        );
     }
 
     /**
@@ -62,14 +81,14 @@ export class DocService {
      */
     private getDocId(docPath: string): string {
         let docId = docPath;
-        if (this.navService.noSideNavUrls.includes(docId)) {
+        if (this.topNavHolder.noSideNavUrls.includes(docId)) {
             if (!docId) {
                 docId = 'index';
             }
             if (!docId.startsWith('mixture/')) {
                 docId = `mixture/${docId}`;
             }
-        } else if (this.navService.hasSideNavUrls.includes(docId)) {
+        } else if (this.topNavHolder.hasSideNavUrls.includes(docId)) {
             docId = `${docId}/${docId}`;
         }
         return docId;

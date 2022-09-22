@@ -215,11 +215,17 @@ export class AppComponent implements OnInit {
             this.topNarrNavNodes = this.buildTopNarrNavNodes();
         });
 
-        this.navService.topSideNode.subscribe(topSideNode => {
-            this.topCurrNode = topSideNode.topCurrNode;
+        this.navService.topCurrNode.subscribe(topCurrNode => {
+            this.topCurrNode = topCurrNode;
             this.topNarrCurrNode = this.buildTopNarrCurrNode();
-            this.sideNavNodes = topSideNode.sideNavNodes || [];
-            this.sideCurrNode = topSideNode.sideCurrNode;
+        });
+
+        this.navService.sideNavNodes.subscribe(sideNavNodes => {
+            this.sideNavNodes = sideNavNodes || [];
+        });
+
+        this.navService.sideCurrNode.subscribe(sideCurrNode => {
+            this.sideCurrNode = sideCurrNode;
         });
 
         this.navService.footerNavNodes.subscribe(footerNavNodes => {
@@ -238,7 +244,8 @@ export class AppComponent implements OnInit {
 
         combineLatest([
             this.docService.currDoc,
-            this.navService.topSideNode
+            this.navService.topCurrNode,
+            this.navService.sideCurrNode
         ]).pipe(first()).subscribe(() => this.updateShell());
 
         this.serviceWorkerService.enableUpdate();

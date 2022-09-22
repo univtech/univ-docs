@@ -22,22 +22,10 @@ export interface CurrNode {
     traceNodes: NavNode[];
 }
 
-// 顶部当前节点、侧边导航节点和侧边当前节点
-export interface TopSideNode {
-    // 顶部当前节点
-    topCurrNode?: CurrNode;
-    // 侧边导航节点
-    sideNavNodes?: NavNode[];
-    // 侧边当前节点
-    sideCurrNode?: CurrNode;
-}
-
-// 顶部当前节点、侧边导航节点和侧边当前节点映射
-export interface TopSideNodeMap {
-    // 顶部当前节点
-    topCurrNodeMap: Map<string, CurrNode>;
-    // 侧边导航节点
-    sideNavNodeMap: Map<string, NavNode[]>;
-    // 侧边当前节点
-    sideCurrNodeMap: Map<string, CurrNode>;
+// 顶部导航持有者
+export interface TopNavHolder {
+    // 有侧边导航的顶部导航路径
+    hasSideNavUrls: string[];
+    // 无侧边导航的顶部导航路径
+    noSideNavUrls: string[];
 }
