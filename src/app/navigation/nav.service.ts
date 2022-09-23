@@ -139,7 +139,7 @@ export class NavService {
      * @return 顶部当前节点或undefined
      */
     private getTopCurrNodeByPath(currPath: string, topNavHolder: TopNavHolder, topCurrNodeMap: Map<string, CurrNode>): CurrNode | undefined {
-        const topNavUrl = topNavHolder.hasSideNavUrls.find(navUrl => currPath.startsWith(navUrl));
+        const topNavUrl = topNavHolder.hasSideNavUrls.find(navUrl => currPath.startsWith(`${navUrl}/`));
         let topCurrNode = topCurrNodeMap.get(currPath);
         if (!topCurrNode && topNavUrl) {
             // 当前地址可能是侧边导航路径
@@ -197,7 +197,7 @@ export class NavService {
      * @return 侧边导航节点
      */
     private getSideNavNodesByPath(currPath: string, topNavHolder: TopNavHolder, sideNavNodeMap: Map<string, Observable<NavNode[]>>): Observable<NavNode[]> {
-        const topNavUrl = topNavHolder.hasSideNavUrls.find(navUrl => currPath.startsWith(navUrl));
+        const topNavUrl = topNavHolder.hasSideNavUrls.find(navUrl => currPath.startsWith(`${navUrl}/`));
         let sideNavNodes = sideNavNodeMap.get(currPath);
         if (!sideNavNodes && topNavUrl) {
             // 当前地址可能是侧边导航路径
