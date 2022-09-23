@@ -1,6 +1,6 @@
 import {InjectionToken, StaticProvider} from '@angular/core';
 
-import {convertSvgTemplate} from './security.service';
+import {convertSvgTemplate} from '../base/security.service';
 
 // svg图标
 export interface SvgIcon {

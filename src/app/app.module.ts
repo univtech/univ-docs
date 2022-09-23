@@ -20,8 +20,6 @@ import {LogService} from './base/log.service';
 import {GoogleService} from './base/google.service';
 import {ErrorService} from './base/error.service';
 import {DeployService} from './base/deploy.service';
-import {IconService} from './base/icon.service';
-import {svgIconProviders} from './base/icon.model';
 import {storageProviders} from './base/storage.service';
 import {windowProvider, windowToken} from './base/window.service';
 import {currentDateProvider, currentDateToken} from './base/date.service';
@@ -45,6 +43,8 @@ import {SearchBoxComponent} from './search/search-box.component';
 import {SearchResultModule} from './search/search-result.module';
 
 import {IconComponent} from './icon/icon.component';
+import {IconService} from './icon/icon.service';
+import {svgIconProviders} from './icon/icon.model';
 
 import {ElementModule} from './element/element.module';
 import {NoticeComponent} from './notice/notice.component';
