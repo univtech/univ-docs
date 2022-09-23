@@ -111,7 +111,7 @@ export class NavService {
         if (topNavUrl && topNavNode.noSideNav && !topNavHolder.noSideNavUrls.includes(topNavUrl)) {
             topNavHolder.noSideNavUrls.push(topNavUrl);
         }
-        topNavNode.childNodes?.forEach(childNavNode => this.getTopNavUrl(childNavNode, topNavHolder));
+        topNavNode.childNodes?.forEach(childNode => this.getTopNavUrl(childNode, topNavHolder));
     }
 
     /**
@@ -334,7 +334,7 @@ export class NavService {
         if (navUrl) {
             currNodeMap.set(navUrl, {url: navUrl, traceNodes: navNodes});
         }
-        navNode.childNodes?.forEach(childNavNode => this.buildCurrNode(childNavNode, navNodes, currNodeMap));
+        navNode.childNodes?.forEach(childNode => this.buildCurrNode(childNode, navNodes, currNodeMap));
     }
 
 }
