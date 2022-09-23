@@ -30,11 +30,7 @@
 
             <univ-theme-toggle #themeToggle></univ-theme-toggle>
 
-            <div #externalIcons class="toolbar-external-icons-container">
-                <a mat-icon-button href="https://github.com/angular/angular" title="GitHub" aria-label="GitHub">
-                    <mat-icon svgIcon="logos:icon_github"></mat-icon>
-                </a>
-            </div>
+            <univ-icon #externalIcons [extIcons]="extIcons"></univ-icon>
         </mat-toolbar-row>
     </mat-toolbar>
 </header>

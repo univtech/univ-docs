@@ -44,6 +44,8 @@ import {SearchService} from './search/search.service';
 import {SearchBoxComponent} from './search/search-box.component';
 import {SearchResultModule} from './search/search-result.module';
 
+import {IconComponent} from './icon/icon.component';
+
 import {ElementModule} from './element/element.module';
 import {NoticeComponent} from './notice/notice.component';
 import {CookiePopupComponent} from './cookie/cookie-popup.component';
@@ -75,6 +77,7 @@ import {AppComponent} from './app.component';
         FooterComponent,
         DocViewComponent,
         SearchBoxComponent,
+        IconComponent,
         NoticeComponent,
         CookiePopupComponent,
         ThemeToggleComponent,

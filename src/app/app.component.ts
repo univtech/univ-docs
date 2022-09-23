@@ -4,7 +4,7 @@ import {MatDrawerMode, MatSidenav} from '@angular/material/sidenav';
 import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {first, map} from 'rxjs/operators';
 
-import {Authorize} from './config/config.model';
+import {Authorize, ExtIcon} from './config/config.model';
 import {ConfigService} from './config/config.service';
 import {CurrNode, NavNode} from './navigation/nav.model';
 import {NavService} from './navigation/nav.service';
@@ -76,6 +76,9 @@ export class AppComponent implements OnInit {
 
     // 授权信息
     authorize: Authorize;
+
+    // 外部图标
+    extIcons: ExtIcon[];
 
     // 当前路径
     private currPath: string;
@@ -234,6 +237,10 @@ export class AppComponent implements OnInit {
 
         this.configService.authorize.subscribe(authorize => {
             this.authorize = authorize;
+        });
+
+        this.configService.extIcons.subscribe(extIcons => {
+            this.extIcons = extIcons;
         });
 
         const hasTocItem = this.tocService.tocItems.pipe(map(tocItems => tocItems.length > 0));

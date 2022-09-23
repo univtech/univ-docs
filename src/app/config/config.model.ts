@@ -25,3 +25,15 @@ export interface License {
     // 内容
     content: string;
 }
+
+// 外部图标
+export interface ExtIcon {
+    // 标签
+    label: string;
+    // 标题
+    title: string;
+    // 链接
+    href: string;
+    // 图标
+    icon: string;
+}
