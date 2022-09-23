@@ -19,7 +19,7 @@
  * @param node 代码节点
  * @return {*} `<univ-code-example>`标签
  */
-module.exports = function handleCode(handler, node) {
+module.exports = function code(handler, node) {
     const code = node.value ? ('\n' + node.value + '\n') : '';
     const lang = node.lang && node.lang.match(/^[^ \t]+(?=[ \t]|$)/);
     const props = {};

@@ -5,7 +5,7 @@
 @mixin theme($theme) {
     $is-dark-theme: map.get($theme, is-dark);
 
-    unic-code-example {
+    univ-code-example {
         &:not(.no-box) {
             background-color: if($is-dark-theme, constant.$color-gray-deep, rgb(constant.$color-gray-bg, 0.2));
             border: 0.5px solid if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
@@ -25,7 +25,7 @@
         }
     }
 
-    unic-code-tab {
+    univ-code-tab {
         .code-tab-group {
             .mat-tab-label {
                 &:hover {
@@ -35,20 +35,20 @@
         }
     }
 
-    unic-code-example.avoid header,
-    unic-code-example.avoidFile header {
+    univ-code-example.avoid header,
+    univ-code-example.avoidFile header {
         border: 2px solid constant.$color-red-bright;
         background: constant.$color-red-bright;
     }
 
-    unic-code-example.avoid,
-    unic-code-example.avoidFile,
-    unic-code-tab.avoid mat-tab-body,
-    unic-code-tab.avoidFile mat-tab-body {
+    univ-code-example.avoid,
+    univ-code-example.avoidFile,
+    univ-code-tab.avoid mat-tab-body,
+    univ-code-tab.avoidFile mat-tab-body {
         border: 0.5px solid constant.$color-red-bright;
     }
 
-    unic-code {
+    univ-code {
         pre.prettyprint {
             code {
                 ol.linenums {
@@ -208,7 +208,7 @@
 
     /* SHELL / TERMINAL CODE BLOCKS */
 
-    unic-code-example {
+    univ-code-example {
         &[language="shell"],
         &[language="sh"],
         &[language="bash"] {

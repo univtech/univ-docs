@@ -1,8 +1,8 @@
 @use '../../constant';
 @use '../../mixin';
 
-unic-code-example,
-unic-code-tab {
+univ-code-example,
+univ-code-tab {
     clear: both;
     display: block;
 
@@ -20,7 +20,7 @@ unic-code-tab {
     }
 }
 
-unic-code-example {
+univ-code-example {
     &:not(.no-box) {
         border-radius: 5px;
         margin: 16px auto;
@@ -47,7 +47,7 @@ unic-code-example {
     }
 }
 
-unic-code-tab {
+univ-code-tab {
     margin: 16px 0;
 
     .code-tab-group {

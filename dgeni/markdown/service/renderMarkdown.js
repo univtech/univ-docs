@@ -1,6 +1,6 @@
 const remark = require('remark');
 const remarkHtml = require('remark-html');
-const handleCode = require('../handler/handleCode');
+const code = require('../handler/code');
 const handleHeadingDepth = require('../plugin/handleHeadingDepth');
 
 /**
@@ -21,7 +21,7 @@ module.exports = function renderMarkdown() {
             .use(handleInlineTag)
             .use(handlePlainHTMLBlocks)
             .use(handleHeadingDepth(headingMap))
-            .use(remarkHtml, {handlers: {handleCode}, sanitize: false});
+            .use(remarkHtml, {handlers: {code}, sanitize: false});
         return renderer.processSync(content).toString();
     };
 
