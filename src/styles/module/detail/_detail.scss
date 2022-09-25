@@ -1,6 +1,6 @@
 @use 'sass:selector';
-@use '../../constant';
-@use '../../mixin';
+@use 'content/extension/styles/constant';
+@use 'content/extension/styles/mixin';
 
 /*
  * General styling to make detail/summary tags look a bit more material

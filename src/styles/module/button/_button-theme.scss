@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '../../constant';
+@use 'content/extension/styles/constant';
 
 @mixin theme($theme) {
     // This rule overrides some Angular Material styles defined for `.mat-button`
