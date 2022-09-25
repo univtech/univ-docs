@@ -3,7 +3,8 @@
 /tmp
 /out-tsc
 /bazel-out
-/src/content
+/src/content/*
+!/src/content/extension
 
 # Node.js
 /node_modules
