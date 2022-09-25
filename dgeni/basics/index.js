@@ -14,9 +14,11 @@ const {
     packageFile,
     srcFolder,
     dgeniTemplateFolder,
+    contentExtensionFolder,
     contentNavigationFolder,
     contentConfigFolder,
     contentImageFolder,
+    srcContentExtensionFolder,
     srcContentNavigationFolder,
     srcContentDocumentFolder,
     srcContentConfigFolder,
@@ -125,6 +127,7 @@ module.exports = new Package('basics', [dgeniGit, dgeniJsdoc, dgeniNunjucks, dge
     // 配置处理器：copyFolders
     .config(function(copyFolders) {
         copyFolders.folderMap.push(
+            {source: contentExtensionFolder, target: srcContentExtensionFolder},
             {source: contentNavigationFolder, target: srcContentNavigationFolder},
             {source: contentConfigFolder, target: srcContentConfigFolder},
             {source: contentImageFolder, target: srcContentImageFolder},

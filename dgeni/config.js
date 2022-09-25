@@ -13,6 +13,9 @@ const srcFolder = resolve(projectFolder, 'src');
 // dgeni/template目录
 const dgeniTemplateFolder = resolve(projectFolder, 'dgeni/template');
 
+// content/extension目录
+const contentExtensionFolder = resolve(projectFolder, 'content/extension');
+
 // content/navigation目录
 const contentNavigationFolder = resolve(projectFolder, 'content/navigation');
 
@@ -24,6 +27,9 @@ const contentConfigFolder = resolve(projectFolder, 'content/config');
 
 // content/image目录
 const contentImageFolder = resolve(projectFolder, 'content/image');
+
+// src/content/extension目录
+const srcContentExtensionFolder = resolve(projectFolder, 'src/content/extension');
 
 // src/content/navigation目录
 const srcContentNavigationFolder = resolve(projectFolder, 'src/content/navigation');
@@ -57,10 +63,12 @@ module.exports = {
     packageFile,
     srcFolder,
     dgeniTemplateFolder,
+    contentExtensionFolder,
     contentNavigationFolder,
     contentDocumentFolder,
     contentConfigFolder,
     contentImageFolder,
+    srcContentExtensionFolder,
     srcContentNavigationFolder,
     srcContentDocumentFolder,
     srcContentConfigFolder,
