@@ -22,9 +22,6 @@ const contentNavigationFolder = resolve(projectFolder, 'content/navigation');
 // content/document目录
 const contentDocumentFolder = resolve(projectFolder, 'content/document');
 
-// content/config目录
-const contentConfigFolder = resolve(projectFolder, 'content/config');
-
 // content/image目录
 const contentImageFolder = resolve(projectFolder, 'content/image');
 
@@ -36,9 +33,6 @@ const srcContentNavigationFolder = resolve(projectFolder, 'src/content/navigatio
 
 // src/content/document目录
 const srcContentDocumentFolder = resolve(projectFolder, 'src/content/document');
-
-// src/content/config目录
-const srcContentConfigFolder = resolve(projectFolder, 'src/content/config');
 
 // src/content/image目录
 const srcContentImageFolder = resolve(projectFolder, 'src/content/image');
@@ -66,12 +60,10 @@ module.exports = {
     contentExtensionFolder,
     contentNavigationFolder,
     contentDocumentFolder,
-    contentConfigFolder,
     contentImageFolder,
     srcContentExtensionFolder,
     srcContentNavigationFolder,
     srcContentDocumentFolder,
-    srcContentConfigFolder,
     srcContentImageFolder,
     requireFolder,
 };

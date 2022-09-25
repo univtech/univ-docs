@@ -16,12 +16,10 @@ const {
     dgeniTemplateFolder,
     contentExtensionFolder,
     contentNavigationFolder,
-    contentConfigFolder,
     contentImageFolder,
     srcContentExtensionFolder,
     srcContentNavigationFolder,
     srcContentDocumentFolder,
-    srcContentConfigFolder,
     srcContentImageFolder,
 } = require('../config');
 
@@ -129,7 +127,6 @@ module.exports = new Package('basics', [dgeniGit, dgeniJsdoc, dgeniNunjucks, dge
         copyFolders.folderMap.push(
             {source: contentExtensionFolder, target: srcContentExtensionFolder},
             {source: contentNavigationFolder, target: srcContentNavigationFolder},
-            {source: contentConfigFolder, target: srcContentConfigFolder},
             {source: contentImageFolder, target: srcContentImageFolder},
         );
     })

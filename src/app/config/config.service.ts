@@ -13,10 +13,10 @@ import {Authorize, ExtIcon} from './config.model';
 export class ConfigService {
 
     // 授权信息配置文件
-    private authorizeFile = 'content/config/authorize.json';
+    private authorizeFile = 'content/navigation/footer-license.json';
 
     // 外部图标配置文件
-    private iconFile = 'content/config/icon.json';
+    private iconFile = 'content/navigation/top-icon.json';
 
     // 授权信息
     authorize: Observable<Authorize>;
