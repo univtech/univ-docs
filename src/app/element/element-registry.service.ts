@@ -1,12 +1,8 @@
-import {InjectionToken, Type} from '@angular/core';
+import {InjectionToken} from '@angular/core';
 import {LoadChildrenCallback} from '@angular/router';
 import {extensionElementComponentModuleRoutes} from '../../content/extension/app/element/element-extension.service';
 
-// 元素组件模块接口，由声明元素组件的模块实现
-export interface ElementComponentModule {
-    // 元素组件
-    elementComponent: Type<any>;
-}
+export {ElementComponentModule} from '../../content/extension/app/element/element-extension.service';
 
 // 元素组件模块令牌
 export const elementComponentModuleToken = new InjectionToken<Map<string, LoadChildrenCallback>>('elementComponentModuleToken');
