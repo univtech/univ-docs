@@ -2,6 +2,7 @@
 @use './base';
 @use './layout';
 @use './module';
+@use '../content/extension/styles';
 
 // 导入打印样式
 @use './print';

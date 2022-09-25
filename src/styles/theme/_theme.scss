@@ -1,9 +1,11 @@
 @use '../base/theme' as base-theme;
 @use '../layout/theme' as layout-theme;
 @use '../module/theme' as module-theme;
+@use '../../content/extension/styles/theme' as extension-theme;
 
 @mixin theme($theme) {
     @include base-theme.theme($theme);
     @include layout-theme.theme($theme);
     @include module-theme.theme($theme);
+    @include extension-theme.theme($theme);
 }
