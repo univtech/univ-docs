@@ -42,7 +42,7 @@ module.exports = new Package('basics', [dgeniGit, dgeniJsdoc, dgeniNunjucks, dge
     .processor(require('./processor/checkDocProperty'))
 
     // 注册后处理器
-    .factory(require('./post-processor/addImageSize'))
+    .factory(require('./post/addImageSize'))
 
     // 重写服务：packageInfo
     .factory('packageInfo', function() {
@@ -135,9 +135,9 @@ module.exports = new Package('basics', [dgeniGit, dgeniJsdoc, dgeniNunjucks, dge
     .config(function(postProcessHtml, addImageSize) {
         addImageSize.basePath = srcFolder; // `<img src="相对于srcFolder">`
         postProcessHtml.plugins = [
-            require('./post-processor/autoLinkHeading'),
+            require('./post/autoLinkHeading'),
             addImageSize,
-            require('./post-processor/checkH1Heading')
+            require('./post/checkH1Heading')
         ];
     })
 
