@@ -1,6 +1,6 @@
 import {InjectionToken, Type} from '@angular/core';
 import {LoadChildrenCallback} from '@angular/router';
-import {elementExtensionComponentModuleRoutes} from '../../../content/extension/app/element/element-extension.service';
+import {extensionElementComponentModuleRoutes} from '../../content/extension/app/element/element-extension.service';
 
 // 元素组件模块接口，由声明元素组件的模块实现
 export interface ElementComponentModule {
@@ -16,7 +16,7 @@ export const elementComponentModuleMap = new Map<string, LoadChildrenCallback>()
 
 // 元素组件模块路由
 export const elementComponentModuleRoutes = [
-    ...elementExtensionComponentModuleRoutes,
+    ...extensionElementComponentModuleRoutes,
     {selector: 'univ-search-path', loadChildren: () => import('../search/search-path.module').then(module => module.SearchPathModule)},
     {selector: 'univ-code-example', loadChildren: () => import('../code/code-example.module').then(module => module.CodeExampleModule)},
     {selector: 'univ-code-tab', loadChildren: () => import('../code/code-tab.module').then(module => module.CodeTabModule)},
