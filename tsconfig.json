@@ -26,10 +26,13 @@
         "skipLibCheck": true,
         "strictPropertyInitialization": false
     },
+    "include": [
+        "content/extension"
+    ],
     "exclude": [
-        "dgeni",
-        "content",
-        "script",
+        "content/navigation",
+        "content/document",
+        "content/image",
         "build",
         "dist",
         "out-tsc",
