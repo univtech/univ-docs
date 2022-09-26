@@ -34,7 +34,7 @@
         }
 
         p {
-            @include mixin.font-size(13);
+            @include mixin.font-size(14);
             @include mixin.line-height(24);
             padding: 0 16px;
             margin: 0;
@@ -50,7 +50,7 @@
             text-align: right;
 
             a {
-                @include mixin.font-size(13);
+                @include mixin.font-size(14);
             }
         }
     }
