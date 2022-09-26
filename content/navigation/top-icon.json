@@ -1,8 +1,8 @@
 [
     {
-        "label": "GitHub",
         "title": "GitHub",
-        "href": "https://github.com/univtech/univ-docs",
-        "icon": "logos:icon_github"
+        "label": "GitHub",
+        "icon": "logos:icon_github",
+        "href": "https://github.com/univtech/univ-docs"
     }
 ]

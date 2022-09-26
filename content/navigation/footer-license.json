@@ -7,14 +7,14 @@
         {
             "label": "代码许可",
             "title": "代码许可协议",
-            "href": "mixture/license",
-            "content": "MIT许可协议"
+            "content": "MIT许可协议",
+            "href": "mixture/license"
         },
         {
             "label": "文档许可",
             "title": "文档许可协议",
-            "href": "https://creativecommons.org/licenses/by/4.0",
-            "content": "CC4.0许可协议"
+            "content": "CC4.0许可协议",
+            "href": "https://creativecommons.org/licenses/by/4.0"
         }
     ]
 }

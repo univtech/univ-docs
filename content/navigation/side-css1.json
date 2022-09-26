@@ -1,48 +1,37 @@
 [
     {
-        "url": "css1",
         "title": "CSS1",
-        "tooltip": "欢迎来到CSS1",
-        "hidden": false
+        "url": "css1"
     },
     {
-        "url": "css1/introduction",
-        "title": "CSS1简介",
-        "tooltip": "欢迎来到CSS1",
-        "hidden": false
+        "title": "简介",
+        "url": "css1/introduction"
     },
     {
-        "title": "入门指南",
-        "tooltip": "设置环境和学习基本概念",
+        "title": "指南",
         "childNodes": [
             {
-                "title": "试一试",
-                "tooltip": "检测和使用一个现成的示例应用，不需要设置",
+                "title": "入门",
                 "childNodes": [
                     {
-                        "url": "css1/start",
-                        "title": "开始CSS1",
-                        "tooltip": "看看CSS1的组件模型、模板语法和组件通信"
+                        "title": "开始",
+                        "url": "css1/start"
                     },
                     {
-                        "url": "css1/start/start-routing",
                         "title": "添加导航",
-                        "tooltip": "使用浏览器的URL在不同的页面视图之间进行导航"
+                        "url": "css1/start/start-routing"
                     },
                     {
-                        "url": "css1/start/start-data",
                         "title": "管理数据",
-                        "tooltip": "使用服务和通过HTTP访问外部数据"
+                        "url": "css1/start/start-data"
                     },
                     {
-                        "url": "css1/start/start-forms",
-                        "title": "使用表单进行用户输入",
-                        "tooltip": "了解如何使用表单从用户那里获取和管理数据"
+                        "title": "使用表单",
+                        "url": "css1/start/start-forms"
                     },
                     {
-                        "url": "css1/start/start-deployment",
                         "title": "部署应用",
-                        "tooltip": "转到本地开发，或者将应用部署到Firebase或自己的服务器"
+                        "url": "css1/start/start-deployment"
                     }
                 ]
             }
