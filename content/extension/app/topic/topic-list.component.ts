@@ -1,7 +1,6 @@
 import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 
-import {htmlSafeByReview} from 'safevalues/restricted/reviewed';
-
+import {getProjectionContent} from '../base/content.service';
 import {Topic} from './topic.model';
 
 /**
@@ -35,19 +34,16 @@ export class TopicListComponent implements AfterViewInit {
     // 主题列表
     @Input() topics: Topic[];
 
-    // 主题内容元素，引用`<div #topicContent>`
-    @ViewChild('topicContent', {static: true}) topicContentElement: ElementRef<HTMLDivElement>;
+    // 主题列表内容投影元素，引用`<div #topicListContent>`
+    @ViewChild('topicListContent', {static: true}) topicListContentElement: ElementRef<HTMLDivElement>;
 
     /**
      * 组件视图初始化完成之后的回调方法
      */
     ngAfterViewInit(): void {
         if (!this.topics) {
-            const topicContentElement = this.topicContentElement.nativeElement;
-            const topicContentHtml = htmlSafeByReview(topicContentElement.innerHTML, '^');
-            const topicContent = topicContentHtml?.toString() || '[]';
-            this.topics = JSON.parse(`${topicContent}`);
-            topicContentElement.textContent = '';
+            const topicListContent = getProjectionContent(this.topicListContentElement) || '[]';
+            this.topics = JSON.parse(`${topicListContent}`);
         }
     }
 
