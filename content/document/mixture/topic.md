@@ -1,9 +1,4 @@
-<header class="marketing-banner">
-    <h1 class="banner-headline no-toc no-anchor center full-width">页面标题</h1>
-</header>
-
-<article class="center-layout">
-<univ-topic-page>
+<univ-topic-page title="页面标题">
 [
     {
         "title": "列表标题1",
@@ -47,4 +42,3 @@
     }
 ]
 </univ-topic-page>
-</article>
