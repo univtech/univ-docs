@@ -1,34 +1,21 @@
-<h1 class="no-toc">Introduction to the Angular Docs</h1>
+<h1 class="no-toc">CSS1</h1>
 
-Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.
-
-These Angular docs help you learn and use the Angular framework and development platform, from your first application to optimizing complex single-page apps for enterprises.
-Tutorials and guides include downloadable examples to accelerate your projects.
-
-<univ-topic-list>
+<univ-topic-pane>
 [
     {
-        "title": "Getting started",
-        "content": "Examine and work with a small ready-made Angular app, without any setup.",
-        "href": "css1/start"
-    },
-    {
-        "title": "主题标题2",
-        "content": "主题内容2",
+        "title": "CSS11",
+        "content": "CSS11",
         "href": "#"
     },
     {
-        "title": "主题标题3",
-        "content": "主题内容3",
+        "title": "CSS12",
+        "content": "CSS12",
+        "href": "#"
+    },
+    {
+        "title": "CSS13",
+        "content": "CSS13",
         "href": "#"
     }
 ]
-</univ-topic-list>
-
-## Assumptions
-
-These docs assume that you are already familiar with HTML.
-
-## Feedback
-
-
+</univ-topic-pane>
