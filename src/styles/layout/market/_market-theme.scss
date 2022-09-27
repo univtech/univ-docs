@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'node_modules/@angular/material';
-@use 'content/extension/styles/constant';
+@use 'content/extension/styles/base/constant';
 
 @mixin theme($theme) {
     $primary: map.get($theme, primary);
@@ -57,13 +57,5 @@
 
     .text-headline {
         color: if($is-dark-theme, constant.$color-blue-light, constant.$color-blue);
-    }
-
-    .marketing-banner {
-        background-color: if($is-dark-theme, material.get-color-from-palette($primary, 800), material.get-color-from-palette($primary, 600));
-
-        .banner-headline {
-            color: constant.$color-white;
-        }
     }
 }

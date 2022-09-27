@@ -1,4 +1,4 @@
-@use 'content/extension/styles/constant';
+@use 'content/extension/styles/base/constant';
 
 @mixin theme($theme) {
     mat-toolbar.toolbar {

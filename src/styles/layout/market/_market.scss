@@ -1,5 +1,5 @@
-@use 'content/extension/styles/constant';
-@use 'content/extension/styles/mixin';
+@use 'content/extension/styles/base/constant';
+@use 'content/extension/styles/base/mixin';
 
 $logoUrl: "/assets/images/logos/univ.svg";
 
@@ -334,37 +334,5 @@ div[layout=row] {
         img {
             max-width: 90% !important;
         }
-    }
-}
-
-.marketing-banner {
-    margin-top: 64px;
-    padding: 32px;
-
-    @media (max-width: 600px) {
-        margin-top: 56px;
-        padding: 18px;
-    }
-
-    .banner-headline {
-        text-transform: uppercase;
-        @include mixin.font-size(24);
-        font-weight: 300;
-        margin: 0;
-        -webkit-margin-before: 0;
-        -webkit-margin-after: 0;
-
-        @media (max-width: 600px) {
-            @include mixin.font-size(18);
-            font-weight: 400;
-        }
-
-        &:after {
-            display: none;
-        }
-    }
-
-    .page-features & {
-        margin-bottom: 20px;
     }
 }

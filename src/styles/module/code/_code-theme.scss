@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use 'sass:map';
-@use 'content/extension/styles/constant';
+@use 'content/extension/styles/base/constant';
 
 @mixin theme($theme) {
     $is-dark-theme: map.get($theme, is-dark);
