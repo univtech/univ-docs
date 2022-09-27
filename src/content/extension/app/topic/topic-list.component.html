@@ -1,7 +1,7 @@
-<div *ngIf="topics" class="card-container">
-    <a *ngFor="let topic of topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
+<div *ngIf="topics" class="topic-list">
+    <a *ngFor="let topic of topics" class="topic-pane" title="{{topic.title}}" [href]="topic.href">
         <section>{{topic.title}}</section>
         <p>{{topic.content}}</p>
-        <p class="card-footer">详情</p>
+        <p class="topic-footer">详情</p>
     </a>
 </div>

@@ -1,5 +1,5 @@
 univ-topic-page {
-    .topic-list {
+    .topic-list-pane {
         margin: 32px 0 0 0;
 
         .topic-list-header,
@@ -10,15 +10,6 @@ univ-topic-page {
         .topic-list-header img {
             max-width: 70px;
             margin: 16px;
-        }
-
-        .card-container {
-            margin: 0;
-
-            .docs-card {
-                max-width: 300px;
-                margin: 8px 16px;
-            }
         }
     }
 }

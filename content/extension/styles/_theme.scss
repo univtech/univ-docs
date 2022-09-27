@@ -1,5 +1,5 @@
-@use 'topic/card-theme';
+@use 'topic/topic-list-theme';
 
 @mixin theme($theme) {
-    @include card-theme.theme($theme);
+    @include topic-list-theme.theme($theme);
 }
