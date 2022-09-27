@@ -1,18 +1,10 @@
-import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 import {getProjectionContent} from '../base/content.service';
 import {TopicList} from './topic.model';
 
 /**
- * 主题页面元素。
- *
- * 使用方式一：
- * ```
- * <univ-topic-page title="页面标题" [topicLists]="topicLists">
- * </univ-topic-page>
- * ```
- *
- * 使用方式二：
+ * 主题页面组件，使用方式：
  * ```
  * <univ-topic-page title="页面标题">
  * [
@@ -34,25 +26,23 @@ import {TopicList} from './topic.model';
     selector: 'univ-topic-page',
     templateUrl: './topic-page.component.html',
 })
-export class TopicPageComponent implements AfterViewInit {
+export class TopicPageComponent implements OnInit {
 
     // 页面标题
     @Input() title: string;
 
     // 主题列表
-    @Input() topicLists: TopicList[];
+    topicLists: TopicList[];
 
     // 主题页面内容投影元素，引用`<div #topicPageContent>`
     @ViewChild('topicPageContent', {static: true}) topicPageContentElement: ElementRef<HTMLDivElement>;
 
     /**
-     * 组件视图初始化完成之后的回调方法
+     * 指令的数据绑定属性初始化之后的回调方法
      */
-    ngAfterViewInit(): void {
-        if (!this.topicLists) {
-            const topicPageContent = getProjectionContent(this.topicPageContentElement) || '[]';
-            this.topicLists = JSON.parse(`${topicPageContent}`);
-        }
+    ngOnInit(): void {
+        const topicPageContent = getProjectionContent(this.topicPageContentElement) || '[]';
+        this.topicLists = JSON.parse(`${topicPageContent}`);
     }
 
 }

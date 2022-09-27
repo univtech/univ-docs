@@ -3,7 +3,6 @@
 </header>
 
 <article class="center-layout">
-    <!-- 主题页面内容投影元素 -->
     <div #topicPageContent style="display: none">
         <ng-content></ng-content>
     </div>
@@ -14,6 +13,6 @@
             <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
         </div>
 
-        <univ-topic-list *ngIf="topicList.topics" [topics]="topicList.topics"></univ-topic-list>
+        <univ-topic-list [topics]="topicList.topics"></univ-topic-list>
     </div>
 </article>

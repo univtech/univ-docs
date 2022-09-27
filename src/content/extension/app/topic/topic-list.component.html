@@ -1,8 +1,3 @@
-<!-- 主题列表内容投影元素 -->
-<div #topicListContent style="display: none">
-    <ng-content></ng-content>
-</div>
-
 <div *ngIf="topics" class="card-container">
     <a *ngFor="let topic of topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
         <section>{{topic.title}}</section>

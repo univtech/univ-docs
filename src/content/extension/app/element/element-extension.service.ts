@@ -8,6 +8,6 @@ export interface ElementComponentModule {
 
 // 扩展元素组件模块路由
 export const extensionElementComponentModuleRoutes = [
-    {selector: 'univ-topic-list', loadChildren: () => import('../topic/topic-list.module').then(module => module.TopicListModule)},
+    {selector: 'univ-topic-pane', loadChildren: () => import('../topic/topic-pane.module').then(module => module.TopicPaneModule)},
     {selector: 'univ-topic-page', loadChildren: () => import('../topic/topic-page.module').then(module => module.TopicPageModule)},
 ];
