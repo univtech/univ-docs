@@ -46,18 +46,18 @@
 <univ-topic-pane>
 [
     {
-        "title": "CSS11",
-        "content": "CSS11",
+        "title": "HTML31",
+        "content": "HTML31",
         "href": "#"
     },
     {
-        "title": "CSS12",
-        "content": "CSS12",
+        "title": "HTML32",
+        "content": "HTML32",
         "href": "#"
     },
     {
-        "title": "CSS13",
-        "content": "CSS13",
+        "title": "HTML33",
+        "content": "HTML33",
         "href": "#"
     }
 ]
