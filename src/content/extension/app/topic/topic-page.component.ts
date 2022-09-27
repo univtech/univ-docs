@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 
 import {htmlSafeByReview} from 'safevalues/restricted/reviewed';
 
@@ -28,6 +28,9 @@ import {TopicListComponent} from './topic-list.component';
     templateUrl: './topic-page.component.html',
 })
 export class TopicPageComponent implements AfterViewInit {
+
+    // 页面标题
+    @Input() header: string;
 
     // 主题内容元素，引用`<div #topicContent>`
     @ViewChild('topicContent', {static: true}) topicContentElement: ElementRef<HTMLDivElement>;

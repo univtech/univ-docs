@@ -1,14 +1,20 @@
-<div *ngFor="let topicList of topicLists" class="topic-list">
-    <div class="topic-list-header">
-        <div class="text-headline">{{topicList.title}}</div>
-        <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
-    </div>
+<header class="marketing-banner">
+    <h1 class="banner-headline no-toc no-anchor center full-width">{{header}}</h1>
+</header>
 
-    <div *ngIf="topicList.topics" class="card-container">
-        <a *ngFor="let topic of topicList.topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
-            <section>{{topic.title}}</section>
-            <p>{{topic.content}}</p>
-            <p class="card-footer">详情</p>
-        </a>
+<article class="center-layout">
+    <div *ngFor="let topicList of topicLists" class="topic-list">
+        <div class="topic-list-header">
+            <div class="text-headline">{{topicList.title}}</div>
+            <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
+        </div>
+
+        <div *ngIf="topicList.topics" class="card-container">
+            <a *ngFor="let topic of topicList.topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
+                <section>{{topic.title}}</section>
+                <p>{{topic.content}}</p>
+                <p class="card-footer">详情</p>
+            </a>
+        </div>
     </div>
-</div>
+</article>

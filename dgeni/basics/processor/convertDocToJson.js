@@ -1,11 +1,8 @@
 /**
  * 把文档转换为JSON的处理器，配置属性：
  * * docTypes: string[] 文档类型
- *
- * @param log 记录日志的服务
- * @param createDocMessage 创建文档信息的服务
  */
-module.exports = function convertDocToJson(log, createDocMessage) {
+module.exports = function convertDocToJson() {
     return {
         docTypes: [],
         $runAfter: ['checkBacktickPair'],
@@ -24,8 +21,7 @@ module.exports = function convertDocToJson(log, createDocMessage) {
                     }
 
                     if (title === undefined) {
-                        title = '';
-                        log.warn(createDocMessage('标题属性异常', doc));
+                        title = '无标题文档'; // 暂不需要使用文档标题
                     }
 
                     let content = doc.renderedContent || '';

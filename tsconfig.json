@@ -26,9 +26,6 @@
         "skipLibCheck": true,
         "strictPropertyInitialization": false
     },
-    "include": [
-        "content/extension"
-    ],
     "exclude": [
         "content/navigation",
         "content/document",
