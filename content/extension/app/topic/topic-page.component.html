@@ -3,7 +3,7 @@
 </header>
 
 <article class="center-layout">
-    <!-- 主题页面元素的内容投影，用于获取主题页面元素的HTML内容 -->
+    <!-- 用于获取主题页面元素内容的投影 -->
     <div #topicContent style="display: none">
         <ng-content></ng-content>
     </div>
@@ -14,12 +14,6 @@
             <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
         </div>
 
-        <div *ngIf="topicList.topics" class="card-container">
-            <a *ngFor="let topic of topicList.topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
-                <section>{{topic.title}}</section>
-                <p>{{topic.content}}</p>
-                <p class="card-footer">详情</p>
-            </a>
-        </div>
+        <univ-topic-list *ngIf="topicList.topics" [topics]="topicList.topics"></univ-topic-list>
     </div>
 </article>
