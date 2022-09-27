@@ -1,14 +1,12 @@
-<div *ngFor="let topicList of topicLists" class="topic-list">
-    <div class="topic-list-header">
-        <div class="text-headline">{{topicList.title}}</div>
-        <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
-    </div>
+<!-- 用于获取主题列表元素内容的投影 -->
+<div #topicContent style="display: none">
+    <ng-content></ng-content>
+</div>
 
-    <div *ngIf="topicList.topics" class="card-container">
-        <a *ngFor="let topic of topicList.topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
-            <section>{{topic.title}}</section>
-            <p>{{topic.content}}</p>
-            <p class="card-footer">详情</p>
-        </a>
-    </div>
+<div *ngIf="topics" class="card-container">
+    <a *ngFor="let topic of topics" class="docs-card" title="{{topic.title}}" [href]="topic.href">
+        <section>{{topic.title}}</section>
+        <p>{{topic.content}}</p>
+        <p class="card-footer">详情</p>
+    </a>
 </div>
