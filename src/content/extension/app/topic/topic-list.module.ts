@@ -1,7 +1,6 @@
-import {NgModule, Type} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {ElementComponentModule} from '../element/element-extension.service';
 import {TopicListComponent} from './topic-list.component';
 
 /**
@@ -12,8 +11,6 @@ import {TopicListComponent} from './topic-list.component';
     declarations: [TopicListComponent],
     exports: [TopicListComponent],
 })
-export class TopicListModule implements ElementComponentModule {
-
-    elementComponent: Type<any> = TopicListComponent;
+export class TopicListModule {
 
 }

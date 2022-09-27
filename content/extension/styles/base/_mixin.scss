@@ -1,7 +1,7 @@
 @use 'sass:list';
 @use 'sass:math';
 @use 'sass:selector';
-@use './constant';
+@use 'constant';
 
 // 调整REM字体大小
 @mixin font-size($size) {

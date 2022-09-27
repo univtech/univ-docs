@@ -1,5 +1,7 @@
+@use 'mixture/mixture-banner-theme';
 @use 'topic/topic-list-theme';
 
 @mixin theme($theme) {
+    @include mixture-banner-theme.theme($theme);
     @include topic-list-theme.theme($theme);
 }

@@ -1,4 +1,4 @@
-@use "../mixin";
+@use "../base/mixin";
 
 univ-topic-list {
     .topic-list {
@@ -11,47 +11,42 @@ univ-topic-list {
         .topic-pane {
             @include mixin.card(35%);
 
-            max-width: 300px;
-            min-width: 300px;
-            margin: 8px 16px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            max-width: 300px;
+            min-width: 300px;
+            margin: 8px 16px;
 
             @media screen and (max-width: 600px) {
                 width: 100%;
-                margin: 8px auto;
                 max-width: none;
+                margin: 8px auto;
             }
 
             section {
                 @include mixin.font-size(20);
                 @include mixin.line-height(24);
-                margin: 0;
-                padding: 2.7rem 1.5rem 2.1rem;
                 text-transform: none;
                 text-align: center;
+                margin: 0;
+                padding: 2.7rem 1.5rem 2.1rem;
             }
 
             p {
                 @include mixin.font-size(14);
                 @include mixin.line-height(24);
-                padding: 0 16px;
-                margin: 0;
-                margin-bottom: 1.6rem;
                 text-align: center;
+                margin: 0 0 1.6rem;
+                padding: 0 16px;
             }
 
             .topic-footer {
-                margin-bottom: 0;
-                box-sizing: border-box;
                 @include mixin.line-height(24);
-                padding: 1.3rem 1.5rem;
+                box-sizing: border-box;
                 text-align: right;
-
-                a {
-                    @include mixin.font-size(14);
-                }
+                margin-bottom: 0;
+                padding: 1.3rem 1.5rem;
             }
         }
     }

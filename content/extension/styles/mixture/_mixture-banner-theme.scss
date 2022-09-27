@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material';
+@use '../base/constant';
+
+@mixin theme($theme) {
+    $primary: map.get($theme, primary);
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .mixture-banner {
+        background-color: if($is-dark-theme, material.get-color-from-palette($primary, 800), material.get-color-from-palette($primary, 600));
+
+        .mixture-banner-title {
+            color: constant.$color-white;
+        }
+    }
+}
