@@ -1,5 +1,5 @@
-//@use 'typography/typography-theme';
+@use 'topic/card-theme';
 
 @mixin theme($theme) {
-    //@include typography-theme.theme($theme);
+    @include card-theme.theme($theme);
 }

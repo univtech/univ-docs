@@ -1,5 +1,5 @@
-@use 'content/extension/styles/constant';
-@use 'content/extension/styles/mixin';
+@use '../constant';
+@use '../mixin';
 
 .card-container {
     display: flex;

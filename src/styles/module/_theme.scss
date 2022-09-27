@@ -1,7 +1,6 @@
 @use 'alert/alert-theme';
 @use 'button/button-theme';
 @use 'callout/callout-theme';
-@use 'card/card-theme';
 @use 'code/code-theme';
 @use 'detail/detail-theme';
 @use 'file/file-tree-theme';
@@ -15,7 +14,6 @@
     @include alert-theme.theme($theme);
     @include button-theme.theme($theme);
     @include callout-theme.theme($theme);
-    @include card-theme.theme($theme);
     @include code-theme.theme($theme);
     @include detail-theme.theme($theme);
     @include file-tree-theme.theme($theme);

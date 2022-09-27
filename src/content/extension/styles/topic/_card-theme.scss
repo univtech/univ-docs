@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use '../constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    .card-container {
+        .docs-card {
+            background-color: if($is-dark-theme, constant.$color-gray-deep, constant.$color-white);
+
+            section {
+                color: if($is-dark-theme, constant.$color-cyan, constant.$color-blue);
+            }
+
+            p {
+                color: if($is-dark-theme, constant.$color-white-off, constant.$color-gray-dark);
+            }
+
+            .card-footer {
+                color: if($is-dark-theme, constant.$color-blue-powder, constant.$color-blue-dark);
+                background-color: if($is-dark-theme, constant.$color-gray-dark, rgba(constant.$color-blue, 0.1));
+                border-top: 0.5px solid if($is-dark-theme, constant.$color-gray-dark, constant.$color-gray-light);
+
+                a {
+                    color: constant.$color-gray-medium;
+                }
+            }
+        }
+    }
+
+}
