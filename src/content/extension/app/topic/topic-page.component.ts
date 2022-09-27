@@ -7,7 +7,7 @@ import {TopicListComponent} from './topic-list.component';
 /**
  * 主题元素组件，使用示例：
  * ```
- * <univ-topic-page>
+ * <univ-topic-page title="页面标题">
  * [
  *     {
  *         "title": "列表标题",
@@ -30,7 +30,7 @@ import {TopicListComponent} from './topic-list.component';
 export class TopicPageComponent implements AfterViewInit {
 
     // 页面标题
-    @Input() header: string;
+    @Input() title: string;
 
     // 主题内容元素，引用`<div #topicContent>`
     @ViewChild('topicContent', {static: true}) topicContentElement: ElementRef<HTMLDivElement>;

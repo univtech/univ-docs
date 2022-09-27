@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {Component, OnChanges} from '@angular/core';
 
 import {TopicList} from './topic.model';
 
@@ -10,9 +10,6 @@ import {TopicList} from './topic.model';
     templateUrl: './topic-list.component.html',
 })
 export class TopicListComponent implements OnChanges {
-
-    // 页面标题
-    @Input() header: string;
 
     // 主题内容
     private _topicContent: TrustedHTML;

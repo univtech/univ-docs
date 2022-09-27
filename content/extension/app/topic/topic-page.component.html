@@ -1,6 +1,12 @@
-<!-- 主题页面元素的内容投影，用于获取主题页面元素的HTML内容 -->
-<div #topicContent style="display: none">
-    <ng-content></ng-content>
-</div>
+<header class="marketing-banner">
+    <h1 class="banner-headline no-toc no-anchor center full-width">{{title}}</h1>
+</header>
 
-<univ-topic-list [header]="header"></univ-topic-list>
+<article class="center-layout">
+    <!-- 主题页面元素的内容投影，用于获取主题页面元素的HTML内容 -->
+    <div #topicContent style="display: none">
+        <ng-content></ng-content>
+    </div>
+
+    <univ-topic-list></univ-topic-list>
+</article>
