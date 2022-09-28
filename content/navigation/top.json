@@ -13,6 +13,11 @@
                 "title": "特性",
                 "noSideNav": true,
                 "url": "mixture/feature"
+            },
+            {
+                "title": "资源",
+                "noSideNav": true,
+                "url": "mixture/resource"
             }
         ]
     },
