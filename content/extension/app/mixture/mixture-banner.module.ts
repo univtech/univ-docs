@@ -9,6 +9,6 @@ import {MixtureBannerComponent} from './mixture-banner.component';
     declarations: [MixtureBannerComponent],
     exports: [MixtureBannerComponent],
 })
-export class MixtureModule {
+export class MixtureBannerModule {
 
 }
