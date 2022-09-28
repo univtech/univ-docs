@@ -6,7 +6,7 @@ import {FeatureList} from './feature.model';
 /**
  * 特性页面组件，使用方式：
  * ```
- * <univ-feature-page title="页面标题">
+ * <univ-feature-page title="页面标题" start="开始链接">
  * [
  *     {
  *         "title": "列表标题",
