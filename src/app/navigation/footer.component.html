@@ -15,6 +15,6 @@
 
 <p *ngIf="licenses && licenses.length !== 0">
     <span *ngFor="let license of licenses; let index = index">
-        {{license.label}}：<a [title]="license.title" [href]="license.href">{{license.content}}</a>{{index === lastLicenseIndex ? '。' : '；'}}
+        {{license.label}}：<a [title]="license.title" [href]="license.url">{{license.content}}</a>{{index === lastLicenseIndex ? '。' : '；'}}
     </span>
 </p>

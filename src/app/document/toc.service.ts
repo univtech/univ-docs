@@ -59,7 +59,7 @@ export class TocService {
             return {
                 ...tocItem,
                 level: headingElement.tagName.toLowerCase(),
-                href: `${docId}#${TocService.getHeadingId(headingElement, headingMap)}`,
+                url: `${docId}#${TocService.getHeadingId(headingElement, headingMap)}`,
             };
         });
 

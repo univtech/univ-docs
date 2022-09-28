@@ -13,5 +13,5 @@ export interface Resource {
     // 资源内容
     content: string;
     // 资源链接
-    href: string;
+    url: string;
 }

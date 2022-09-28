@@ -5,17 +5,17 @@
     {
         "title": "CSS11",
         "content": "CSS11",
-        "href": "#"
+        "url": "#"
     },
     {
         "title": "CSS12",
         "content": "CSS12",
-        "href": "#"
+        "url": "#"
     },
     {
         "title": "CSS13",
         "content": "CSS13",
-        "href": "#"
+        "url": "#"
     }
 ]
 </univ-topic-pane>

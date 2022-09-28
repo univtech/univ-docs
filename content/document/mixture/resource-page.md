@@ -6,17 +6,17 @@
             {
                 "title": "资源11",
                 "content": "资源11",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源12",
                 "content": "资源12",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源13",
                 "content": "资源13",
-                "href": "#"
+                "url": "#"
             }
         ]
     },
@@ -26,17 +26,17 @@
             {
                 "title": "资源21",
                 "content": "资源21",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源22",
                 "content": "资源22",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源23",
                 "content": "资源23",
-                "href": "#"
+                "url": "#"
             }
         ]
     },
@@ -46,17 +46,17 @@
             {
                 "title": "资源31",
                 "content": "资源31",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源32",
                 "content": "资源32",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源33",
                 "content": "资源33",
-                "href": "#"
+                "url": "#"
             }
         ]
     },
@@ -66,17 +66,17 @@
             {
                 "title": "资源41",
                 "content": "资源41",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源42",
                 "content": "资源42",
-                "href": "#"
+                "url": "#"
             },
             {
                 "title": "资源43",
                 "content": "资源43",
-                "href": "#"
+                "url": "#"
             }
         ]
     }

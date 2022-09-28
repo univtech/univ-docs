@@ -20,7 +20,7 @@
                 [class.secondary]="tocType === 'EmbeddedExpandable' && index >= maxPrimaryCount"
                 [class.active]="index === activeTocIndex"
                 title="{{tocItem.title}}">
-                <a [href]="tocItem.href" [innerHTML]="tocItem.content"></a>
+                <a [href]="tocItem.url" [innerHTML]="tocItem.content"></a>
             </li>
         </ng-container>
     </ul>

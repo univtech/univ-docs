@@ -21,7 +21,7 @@ export interface License {
     // 标题
     title: string;
     // 链接
-    href: string;
+    url: string;
     // 内容
     content: string;
 }
@@ -33,7 +33,7 @@ export interface ExtIcon {
     // 标题
     title: string;
     // 链接
-    href: string;
+    url: string;
     // 图标
     icon: string;
 }

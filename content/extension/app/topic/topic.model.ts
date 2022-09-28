@@ -13,5 +13,5 @@ export interface Topic {
     // 主题内容
     content: string;
     // 主题链接
-    href: string;
+    url: string;
 }

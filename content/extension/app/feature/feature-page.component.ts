@@ -14,7 +14,7 @@ import {FeatureList} from './feature.model';
  *             {
  *                 "title": "特性标题",
  *                 "content": "特性内容",
- *                 "href": "特性链接"
+ *                 "url": "特性链接"
  *             }
  *         ]
  *     }

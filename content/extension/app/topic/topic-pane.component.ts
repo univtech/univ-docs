@@ -11,7 +11,7 @@ import {TopicListComponent} from './topic-list.component';
  *     {
  *         "title": "主题标题",
  *         "content": "主题内容",
- *         "href": "主题链接"
+ *         "url": "主题链接"
  *     }
  * ]
  * </univ-topic-pane>

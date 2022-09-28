@@ -14,7 +14,7 @@ import {ResourceList} from './resource.model';
  *             {
  *                 "title": "资源标题",
  *                 "content": "资源内容",
- *                 "href": "资源链接"
+ *                 "url": "资源链接"
  *             }
  *         ]
  *     }
