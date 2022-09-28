@@ -1,29 +1,31 @@
 @use "../base/mixin";
 
-.mixture-banner {
-    margin-top: 64px;
-    padding: 32px;
-
-    @media (max-width: 600px) {
-        margin-top: 56px;
-        padding: 18px;
-    }
-
-    .mixture-banner-title {
-        @include mixin.font-size(24);
-        font-weight: 300;
-        text-transform: uppercase;
-        margin: 0;
-        -webkit-margin-before: 0;
-        -webkit-margin-after: 0;
+univ-mixture-banner {
+    .mixture-banner {
+        margin-top: 64px;
+        padding: 32px;
 
         @media (max-width: 600px) {
-            @include mixin.font-size(18);
-            font-weight: 400;
+            margin-top: 56px;
+            padding: 18px;
         }
 
-        &:after {
-            display: none;
+        .mixture-banner-title {
+            @include mixin.font-size(24);
+            margin: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            font-weight: 300;
+            text-transform: uppercase;
+
+            @media (max-width: 600px) {
+                @include mixin.font-size(18);
+                font-weight: 400;
+            }
+
+            &:after {
+                display: none;
+            }
         }
     }
 }
