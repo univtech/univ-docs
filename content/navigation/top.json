@@ -5,6 +5,11 @@
         "url": "mixture/topic"
     },
     {
+        "title": "特性",
+        "noSideNav": true,
+        "url": "mixture/feature"
+    },
+    {
         "title": "HTML",
         "noSideNav": true,
         "url": "mixture/html",

@@ -1,64 +1,38 @@
-<univ-topic-page title="CSS">
+<univ-feature-page title="CSS" start="#">
 [
     {
-        "title": "CSS1",
-        "topics": [
+        "title": "列表1",
+        "features": [
             {
                 "title": "CSS11",
-                "content": "CSS11",
-                "href": "#"
+                "content": "CSS11"
             },
             {
                 "title": "CSS12",
-                "content": "CSS12",
-                "href": "#"
+                "content": "CSS12"
             },
             {
                 "title": "CSS13",
-                "content": "CSS13",
-                "href": "#"
+                "content": "CSS13"
             }
         ]
     },
     {
-        "title": "CSS2",
-        "topics": [
+        "title": "列表2",
+        "features": [
             {
                 "title": "CSS21",
-                "content": "CSS21",
-                "href": "#"
+                "content": "CSS21"
             },
             {
                 "title": "CSS22",
-                "content": "CSS22",
-                "href": "#"
+                "content": "CSS22"
             },
             {
                 "title": "CSS23",
-                "content": "CSS23",
-                "href": "#"
+                "content": "CSS23"
             }
         ]
     }
 ]
-</univ-topic-page>
-
-<univ-topic-pane>
-[
-    {
-        "title": "CSS31",
-        "content": "CSS31",
-        "href": "#"
-    },
-    {
-        "title": "CSS32",
-        "content": "CSS32",
-        "href": "#"
-    },
-    {
-        "title": "CSS33",
-        "content": "CSS33",
-        "href": "#"
-    }
-]
-</univ-topic-pane>
+</univ-feature-page>

@@ -1,64 +1,38 @@
-<univ-topic-page title="HTML">
+<univ-feature-page title="HTML" start="#">
 [
     {
-        "title": "HTML1",
-        "topics": [
+        "title": "列表1",
+        "features": [
             {
                 "title": "HTML11",
-                "content": "HTML11",
-                "href": "#"
+                "content": "HTML11"
             },
             {
                 "title": "HTML12",
-                "content": "HTML12",
-                "href": "#"
+                "content": "HTML12"
             },
             {
                 "title": "HTML13",
-                "content": "HTML13",
-                "href": "#"
+                "content": "HTML13"
             }
         ]
     },
     {
-        "title": "HTML2",
-        "topics": [
+        "title": "列表2",
+        "features": [
             {
                 "title": "HTML21",
-                "content": "HTML21",
-                "href": "#"
+                "content": "HTML21"
             },
             {
                 "title": "HTML22",
-                "content": "HTML22",
-                "href": "#"
+                "content": "HTML22"
             },
             {
                 "title": "HTML23",
-                "content": "HTML23",
-                "href": "#"
+                "content": "HTML23"
             }
         ]
     }
 ]
-</univ-topic-page>
-
-<univ-topic-pane>
-[
-    {
-        "title": "HTML31",
-        "content": "HTML31",
-        "href": "#"
-    },
-    {
-        "title": "HTML32",
-        "content": "HTML32",
-        "href": "#"
-    },
-    {
-        "title": "HTML33",
-        "content": "HTML33",
-        "href": "#"
-    }
-]
-</univ-topic-pane>
+</univ-feature-page>
