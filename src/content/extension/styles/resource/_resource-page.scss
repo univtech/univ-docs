@@ -1,0 +1,42 @@
+@use '../base/constant';
+@use '../base/mixin';
+
+univ-resource-page {
+    .resource-list-table {
+        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 1px 4px 0 rgba(constant.$color-black, 0.37);
+        border-radius: 4px;
+        margin-top: 32px;
+    }
+
+    .resource-list-title {
+        padding: 16px 23px;
+        margin: 0;
+        @include mixin.font-size(20);
+    }
+
+    .resource-pane {
+        display: flex;
+        flex-direction: column;
+        border: transparent solid 1px;
+        padding: 16px 23px 16px 23px;
+        transition: all .3s;
+
+        .resource-title {
+            margin: 0;
+            @include mixin.line-height(24);
+            @include mixin.font-size(18);
+        }
+
+        .resource-content {
+            @include mixin.font-size(14);
+            margin: 0;
+        }
+
+        &:hover {
+            text-decoration: none;
+            border-radius: 4px;
+            transform: translateY(-2px);
+        }
+    }
+}

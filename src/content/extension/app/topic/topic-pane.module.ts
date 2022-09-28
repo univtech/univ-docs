@@ -10,7 +10,6 @@ import {TopicPaneComponent} from './topic-pane.component';
 @NgModule({
     imports: [TopicListModule],
     declarations: [TopicPaneComponent],
-    exports: [TopicPaneComponent],
 })
 export class TopicPaneModule implements ElementComponentModule {
 

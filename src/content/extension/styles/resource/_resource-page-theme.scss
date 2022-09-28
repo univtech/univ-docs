@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '../base/constant';
+
+@mixin theme($theme) {
+    $is-dark-theme: map.get($theme, is-dark);
+
+    univ-resource-page {
+        .resource-list-title {
+            background-color: if($is-dark-theme, constant.$color-gray-deep, constant.$color-gray-mist);
+        }
+
+        .resource-pane {
+            background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-white);
+
+            &:hover {
+                border-color: if($is-dark-theme, rgba(constant.$color-blue-light, 0.5), rgba(constant.$color-blue, 0.5));
+                box-shadow: 0 8px 8px rgb(1 131 163 / 24%), 0 0 8px rgb(1 67 163 / 12%), 0 6px 18px rgb(43 133 231 / 12%);
+            }
+        }
+    }
+}

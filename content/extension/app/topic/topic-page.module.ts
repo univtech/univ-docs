@@ -12,7 +12,6 @@ import {TopicPageComponent} from './topic-page.component';
 @NgModule({
     imports: [CommonModule, MixtureModule, TopicListModule],
     declarations: [TopicPageComponent],
-    exports: [TopicPageComponent],
 })
 export class TopicPageModule implements ElementComponentModule {
 

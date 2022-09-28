@@ -1,0 +1,20 @@
+<univ-mixture-banner [title]="title"></univ-mixture-banner>
+
+<article class="center-layout">
+    <div #resourcePageContent style="display: none">
+        <ng-content></ng-content>
+    </div>
+
+    <div *ngIf="resourceLists && resourceLists.length > 0" class="resource-list-table">
+        <div *ngFor="let resourceList of resourceLists">
+            <div class="resource-list-title">{{resourceList.title}}</div>
+
+            <div *ngIf="resourceList.resources && resourceList.resources.length > 0">
+                <a *ngFor="let resource of resourceList.resources" class="resource-pane" rel="noopener" target="_blank" [href]="resource.href">
+                    <div class="resource-title">{{resource.title}}</div>
+                    <p class="resource-content">{{resource.content}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</article>

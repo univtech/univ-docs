@@ -11,7 +11,6 @@ import {FeaturePageComponent} from './feature-page.component';
 @NgModule({
     imports: [CommonModule, MixtureModule],
     declarations: [FeaturePageComponent],
-    exports: [FeaturePageComponent],
 })
 export class FeaturePageModule implements ElementComponentModule {
 

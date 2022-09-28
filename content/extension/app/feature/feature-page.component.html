@@ -5,20 +5,22 @@
         <ng-content></ng-content>
     </div>
 
-    <div *ngFor="let featureList of featureLists; let featureListIndex = index" class="feature-list-pane">
-        <div class="feature-list-header">
-            <div class="text-headline">{{featureList.title}}</div>
-            <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
-        </div>
-
-        <div *ngIf="featureList.features" class="feature-list">
-            <div *ngFor="let feature of featureList.features" class="feature-pane">
-                <div class="feature-title">{{feature.title}}</div>
-                <p class="feature-content">{{feature.content}}</p>
+    <div *ngIf="featureLists && featureLists.length > 0">
+        <div *ngFor="let featureList of featureLists; let featureListIndex = index" class="feature-list-pane">
+            <div class="feature-list-header">
+                <div class="text-headline">{{featureList.title}}</div>
+                <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
             </div>
-        </div>
 
-        <hr *ngIf="featureListIndex !== featureLists.length -1">
+            <div *ngIf="featureList.features && featureList.features.length > 0" class="feature-list">
+                <div *ngFor="let feature of featureList.features" class="feature-pane">
+                    <div class="feature-title">{{feature.title}}</div>
+                    <p class="feature-content">{{feature.content}}</p>
+                </div>
+            </div>
+
+            <hr *ngIf="featureListIndex !== featureLists.length -1">
+        </div>
     </div>
 
     <div class="cta-bar announcement-bar">

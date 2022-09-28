@@ -37,7 +37,7 @@ univ-feature-page {
                 }
 
                 .feature-title {
-                    @include mixin.font-size(16);
+                    @include mixin.font-size(18);
                     font-weight: 500;
                     margin: 8px 0;
                     clear: both;

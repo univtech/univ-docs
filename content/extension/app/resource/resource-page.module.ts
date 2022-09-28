@@ -3,17 +3,17 @@ import {CommonModule} from '@angular/common';
 
 import {ElementComponentModule} from '../element/element-extension.service';
 import {MixtureModule} from '../mixture/mixture.module';
-import {FeaturePageComponent} from './feature-page.component';
+import {ResourcePageComponent} from './resource-page.component';
 
 /**
- * 特性页面模块
+ * 资源页面模块
  */
 @NgModule({
     imports: [CommonModule, MixtureModule],
-    declarations: [FeaturePageComponent],
+    declarations: [ResourcePageComponent],
 })
-export class FeaturePageModule implements ElementComponentModule {
+export class ResourcePageModule implements ElementComponentModule {
 
-    elementComponent: Type<any> = FeaturePageComponent;
+    elementComponent: Type<any> = ResourcePageComponent;
 
 }

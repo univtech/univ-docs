@@ -1,4 +1,4 @@
-<div *ngIf="topics" class="topic-list">
+<div *ngIf="topics && topics.length > 0" class="topic-list">
     <a *ngFor="let topic of topics" class="topic-pane" [title]="topic.title" [href]="topic.href">
         <section>{{topic.title}}</section>
         <p>{{topic.content}}</p>
