@@ -1,0 +1,26 @@
+<univ-mixture-banner [title]="title"></univ-mixture-banner>
+
+<article class="center-layout">
+    <div #featurePageContent style="display: none">
+        <ng-content></ng-content>
+    </div>
+
+    <div *ngFor="let featureList of featureLists" class="feature-section">
+        <div class="feature-header">
+            <div class="text-headline">{{featureList.title}}</div>
+            <img height="70px" alt="" src="content/extension/assets/topic/topic-list.svg">
+        </div>
+
+        <div *ngIf="featureList.features" class="feature-row">
+            <div *ngFor="let feature of featureList.features" class="feature">
+                <div class="feature-title">{{feature.title}}</div>
+                <p class="text-body">{{feature.content}}</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="cta-bar announcement-bar">
+        <a class="button" [href]="start">开始</a>
+    </div>
+</article>
