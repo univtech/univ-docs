@@ -14,8 +14,7 @@ univ-topic-list {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            max-width: 300px;
-            min-width: 300px;
+            width: 300px;
             margin: 8px 16px;
 
             @media screen and (max-width: 600px) {
@@ -25,28 +24,28 @@ univ-topic-list {
             }
 
             section {
-                @include mixin.font-size(20);
                 @include mixin.line-height(24);
-                text-transform: none;
-                text-align: center;
+                @include mixin.font-size(20);
                 margin: 0;
                 padding: 2.7rem 1.5rem 2.1rem;
+                text-align: center;
+                text-transform: none;
             }
 
             p {
-                @include mixin.font-size(14);
                 @include mixin.line-height(24);
-                text-align: center;
+                @include mixin.font-size(14);
                 margin: 0 0 1.6rem;
                 padding: 0 16px;
+                text-align: center;
             }
 
             .topic-footer {
                 @include mixin.line-height(24);
                 box-sizing: border-box;
-                text-align: right;
                 margin-bottom: 0;
                 padding: 1.3rem 1.5rem;
+                text-align: right;
             }
         }
     }
