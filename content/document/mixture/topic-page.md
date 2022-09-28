@@ -1,4 +1,4 @@
-<univ-topic-page title="主题">
+<univ-topic-page title="主题1">
 [
     {
         "title": "列表1",
@@ -39,28 +39,46 @@
                 "href": "#"
             }
         ]
+    },
+    {
+        "title": "列表3",
+        "topics": [
+            {
+                "title": "主题31",
+                "content": "主题31",
+                "href": "#"
+            },
+            {
+                "title": "主题32",
+                "content": "主题32",
+                "href": "#"
+            },
+            {
+                "title": "主题33",
+                "content": "主题33",
+                "href": "#"
+            }
+        ]
+    },
+    {
+        "title": "列表4",
+        "topics": [
+            {
+                "title": "主题41",
+                "content": "主题41",
+                "href": "#"
+            },
+            {
+                "title": "主题42",
+                "content": "主题42",
+                "href": "#"
+            },
+            {
+                "title": "主题43",
+                "content": "主题43",
+                "href": "#"
+            }
+        ]
     }
 ]
 </univ-topic-page>
-
-<article class="center-layout">
-<univ-topic-pane>
-[
-    {
-        "title": "主题31",
-        "content": "主题31",
-        "href": "#"
-    },
-    {
-        "title": "主题32",
-        "content": "主题32",
-        "href": "#"
-    },
-    {
-        "title": "主题33",
-        "content": "主题33",
-        "href": "#"
-    }
-]
-</univ-topic-pane>
-</article>

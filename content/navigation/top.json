@@ -5,19 +5,24 @@
         "url": "#",
         "childNodes": [
             {
-                "title": "主题",
+                "title": "主题1",
                 "noSideNav": true,
-                "url": "mixture/topic"
+                "url": "mixture/topic-page"
+            },
+            {
+                "title": "主题2",
+                "noSideNav": true,
+                "url": "mixture/topic-pane"
             },
             {
                 "title": "特性",
                 "noSideNav": true,
-                "url": "mixture/feature"
+                "url": "mixture/feature-page"
             },
             {
                 "title": "资源",
                 "noSideNav": true,
-                "url": "mixture/resource"
+                "url": "mixture/resource-page"
             }
         ]
     },

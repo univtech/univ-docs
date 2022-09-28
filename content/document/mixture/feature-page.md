@@ -33,6 +33,40 @@
                 "content": "特性23"
             }
         ]
+    },
+    {
+        "title": "列表3",
+        "features": [
+            {
+                "title": "特性31",
+                "content": "特性31"
+            },
+            {
+                "title": "特性32",
+                "content": "特性32"
+            },
+            {
+                "title": "特性33",
+                "content": "特性33"
+            }
+        ]
+    },
+    {
+        "title": "列表4",
+        "features": [
+            {
+                "title": "特性41",
+                "content": "特性41"
+            },
+            {
+                "title": "特性42",
+                "content": "特性42"
+            },
+            {
+                "title": "特性43",
+                "content": "特性43"
+            }
+        ]
     }
 ]
 </univ-feature-page>

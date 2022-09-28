@@ -39,6 +39,46 @@
                 "href": "#"
             }
         ]
+    },
+    {
+        "title": "列表3",
+        "resources": [
+            {
+                "title": "资源31",
+                "content": "资源31",
+                "href": "#"
+            },
+            {
+                "title": "资源32",
+                "content": "资源32",
+                "href": "#"
+            },
+            {
+                "title": "资源33",
+                "content": "资源33",
+                "href": "#"
+            }
+        ]
+    },
+    {
+        "title": "列表4",
+        "resources": [
+            {
+                "title": "资源41",
+                "content": "资源41",
+                "href": "#"
+            },
+            {
+                "title": "资源42",
+                "content": "资源42",
+                "href": "#"
+            },
+            {
+                "title": "资源43",
+                "content": "资源43",
+                "href": "#"
+            }
+        ]
     }
 ]
 </univ-resource-page>
