@@ -1,13 +1,20 @@
 [
     {
-        "title": "主题",
+        "title": "混合",
         "noSideNav": true,
-        "url": "mixture/topic"
-    },
-    {
-        "title": "特性",
-        "noSideNav": true,
-        "url": "mixture/feature"
+        "url": "#",
+        "childNodes": [
+            {
+                "title": "主题",
+                "noSideNav": true,
+                "url": "mixture/topic"
+            },
+            {
+                "title": "特性",
+                "noSideNav": true,
+                "url": "mixture/feature"
+            }
+        ]
     },
     {
         "title": "HTML",

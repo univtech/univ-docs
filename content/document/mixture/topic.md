@@ -43,6 +43,7 @@
 ]
 </univ-topic-page>
 
+<article class="center-layout">
 <univ-topic-pane>
 [
     {
@@ -62,3 +63,4 @@
     }
 ]
 </univ-topic-pane>
+</article>
