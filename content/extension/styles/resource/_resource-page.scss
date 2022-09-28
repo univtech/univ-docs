@@ -10,9 +10,9 @@ univ-resource-page {
     }
 
     .resource-list-title {
-        padding: 16px 23px;
-        margin: 0;
         @include mixin.font-size(20);
+        margin: 0;
+        padding: 16px 23px;
     }
 
     .resource-pane {
@@ -23,9 +23,9 @@ univ-resource-page {
         transition: all .3s;
 
         .resource-title {
-            margin: 0;
             @include mixin.line-height(24);
             @include mixin.font-size(18);
+            margin: 0;
         }
 
         .resource-content {
@@ -34,9 +34,9 @@ univ-resource-page {
         }
 
         &:hover {
-            text-decoration: none;
             border-radius: 4px;
             transform: translateY(-2px);
+            text-decoration: none;
         }
     }
 }

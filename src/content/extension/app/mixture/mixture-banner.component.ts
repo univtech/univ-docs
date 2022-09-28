@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 /**
- * Mixture横幅组件，使用方式：
+ * 无侧边导航页面横幅组件，使用方式：
  * ```
  * <univ-mixture-banner [title]="title"></univ-mixture-banner>
  * ```

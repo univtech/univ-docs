@@ -6,7 +6,7 @@ import {ResourceList} from './resource.model';
 /**
  * 资源页面组件，使用方式：
  * ```
- * <univ-resource-page title="页面标题" start="开始链接">
+ * <univ-resource-page title="页面标题">
  * [
  *     {
  *         "title": "列表标题",

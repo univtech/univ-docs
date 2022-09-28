@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {MixtureBannerComponent} from './mixture-banner.component';
 
 /**
- * Mixture模块
+ * 无侧边导航页面横幅模块
  */
 @NgModule({
     declarations: [MixtureBannerComponent],
