@@ -3,18 +3,7 @@
 @use 'content/extension/styles/base/constant';
 
 @mixin theme($theme) {
-    $primary: map.get($theme, primary);
-    $foreground: map.get($theme, foreground);
     $is-dark-theme: map.get($theme, is-dark);
-
-    .background-sky {
-        background: linear-gradient(145deg, material.get-color-from-palette($primary, 900), if($is-dark-theme, material.get-color-from-palette($primary, 700), #42a5f5));
-        color: material.get-color-from-palette($foreground, text);
-    }
-
-    section#intro {
-        color: constant.$color-white;
-    }
 
     .announcement-bar {
         background-color: constant.$color-white;
@@ -43,10 +32,6 @@
                 color: if($is-dark-theme, constant.$color-cyan, constant.$color-blue);
             }
         }
-    }
-
-    .button.hero-cta {
-        background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-white);
     }
 
     .cta-bar {
