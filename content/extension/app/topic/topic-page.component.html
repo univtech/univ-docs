@@ -5,7 +5,7 @@
         <ng-content></ng-content>
     </div>
 
-    <div *ngIf="topicLists && topicLists.length > 0">
+    <div *ngIf="topicLists && topicLists.length > 0" class="topic-page-pane">
         <div *ngFor="let topicList of topicLists" class="topic-list-pane">
             <div class="topic-list-header">
                 <div class="text-headline">{{topicList.title}}</div>
