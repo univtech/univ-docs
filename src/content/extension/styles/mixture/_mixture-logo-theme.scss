@@ -7,16 +7,18 @@
     $foreground: map.get($theme, foreground);
     $is-dark-theme: map.get($theme, is-dark);
 
-    .background-sky {
-        background: linear-gradient(145deg, material.get-color-from-palette($primary, 900), if($is-dark-theme, material.get-color-from-palette($primary, 700), #42a5f5));
-        color: material.get-color-from-palette($foreground, text);
-    }
+    univ-mixture-logo {
+        .mixture-logo-background {
+            background: linear-gradient(145deg, material.get-color-from-palette($primary, 900), if($is-dark-theme, material.get-color-from-palette($primary, 700), #42a5f5));
+            color: material.get-color-from-palette($foreground, text);
+        }
 
-    section#intro {
-        color: constant.$color-white;
-    }
+        .mixture-logo-section {
+            color: constant.$color-white;
+        }
 
-    .button.hero-cta {
-        background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-white);
+        .mixture-logo-button {
+            background-color: if($is-dark-theme, constant.$color-gray-dark, constant.$color-white);
+        }
     }
 }

@@ -1,122 +1,87 @@
 @use "../base/mixin";
 
-// .no-title
-// .no-toc
-// .no-anchor
-// .button
-// .hero-cta
-// .no-print
-
-$logoUrl: "/assets/images/logos/univ.svg";
-
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    min-height: 480px;
-    height: 80vh;
-    max-height: 560px;
-    box-sizing: border-box;
-    padding: 48px 48px 32px 48px;
-    overflow: hidden;
-    transform-origin: 100%;
-
-    @media (max-width: 480px) {
-        max-height: 486px;
-        padding-top: 40px;
-        transform: none;
-    }
-}
-
-section#intro {
-    display: flex;
-    align-items: center;
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    height: 480px;
-    margin: 0 auto;
-    padding: 48px 0 0;
-
-    .hero-logo {
-        background-image: url($logoUrl);
+univ-mixture-logo {
+    .mixture-logo-background {
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+        max-height: 560px;
+        min-height: 480px;
     }
 
-    @media (max-width: 65rem) {
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px 0 32px;
-
-        button {
-            margin: 0;
-            height: 60px;
-        }
-    }
-
-    .homepage-container {
-        width: 50%;
-        max-width: 1040px;
-        margin: -7% auto 0;
-        padding-top: 0;
-        padding-bottom: 0;
+    .mixture-logo-section {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        height: 480px;
+        margin: 0 auto;
+        padding: 48px 0 0;
 
         @media (max-width: 65rem) {
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 0 32px;
+        }
+
+        .mixture-logo-image {
+            width: 50%;
+            max-width: 450px;
+            min-width: 250px;
+            max-height: 400px;
+            min-height: 220px;
+            margin: 20px 0;
+        }
+
+        .mixture-logo-pane {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 100%;
-            padding: 0;
+            width: 50%;
+            max-width: 450px;
+            margin: -5% auto 0;
+
+            @media (max-width: 65rem) {
+                align-items: center;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .mixture-logo-content {
+            @include mixin.line-height(64);
+            @include mixin.font-size(40);
+            color: inherit;
+            font-weight: 500;
+            white-space: pre-line;
+
+            @media (max-width: 65rem) {
+                @include mixin.line-height(50);
+                @include mixin.font-size(32);
+                text-align: center;
+            }
+
+            &:after {
+                display: none;
+            }
         }
     }
 
-    .hero-headline {
-        @include mixin.font-size(40);
-        @include mixin.line-height(64);
-        font-weight: 500;
-        margin: 32px 0;
-        color: inherit;
+    .mixture-logo-button {
+        @include mixin.line-height(40);
+        @include mixin.font-size(18);
+        width: 160px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+        border-radius: 48px;
+        box-sizing: border-box;
+        padding: 2px 34px 0;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
 
-        &:after {
-            display: none;
+        &:hover {
+            transform: scale(1.1);
         }
-
-        @media (max-width: 65rem) {
-            text-align: center;
-        }
-
-        @media (max-width: 575px) {
-            @include mixin.font-size(32);
-            @include mixin.line-height(50);
-        }
-    }
-
-    .hero-logo {
-        display: flex;
-        width: 50%;
-        min-width: 250px;
-        height: 400px;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-bottom: 8px;
-    }
-}
-
-.button.hero-cta {
-    padding: 2px 34px 0;
-    @include mixin.font-size(18);
-    font-weight: 600;
-    @include mixin.line-height(40);
-    border-radius: 48px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-    box-sizing: border-box;
-    cursor: pointer;
-
-    &:hover {
-        opacity: 0.9;
     }
 }

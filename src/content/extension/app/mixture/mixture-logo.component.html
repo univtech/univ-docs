@@ -1,10 +1,16 @@
 <header>
-    <div class="background-sky hero"></div>
-    <section id="intro">
-        <div class="hero-logo"></div>
-        <div class="homepage-container">
-            <h1 class="hero-headline no-title no-toc no-anchor" aria-label="Angular - The modern web developer's platform">The modern web<br>developer's platform</h1>
-            <a class="button hero-cta no-print" href="#">Get Started</a>
+    <div #logoBannerContent style="display: none">
+        <ng-content></ng-content>
+    </div>
+
+    <div class="mixture-logo-background"></div>
+
+    <section class="mixture-logo-section">
+        <img class="mixture-logo-image" alt="" [src]="logoBanner.logoUrl">
+
+        <div class="mixture-logo-pane">
+            <h1 class="mixture-logo-content no-title no-toc no-anchor" [attr.aria-label]="logoBanner.content">{{logoBanner.content}}</h1>
+            <a class="mixture-logo-button button no-print" [href]="logoBanner.startUrl">开始</a>
         </div>
     </section>
 </header>
