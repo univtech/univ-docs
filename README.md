@@ -23,7 +23,7 @@ yarn start   启动项目服务
 http://localhost:4200
 ```
 
-## 项目目录：
+## 项目目录
 
 Univ文档项目的主要目录：
 ```
@@ -35,20 +35,20 @@ univ-docs/src/environments          项目环境配置
 univ-docs/src/content               项目文档生成工具生成的项目文档
 univ-docs/dgeni                     项目文档生成工具
 univ-docs/content                   项目文档
-univ-docs/content/extension         项目文档中使用的扩展元素或组件
-univ-docs/content/navigation/app    项目文档中使用的扩展元素或组件的代码
-univ-docs/content/navigation/assets 项目文档中使用的扩展元素或组件的图片
-univ-docs/content/navigation/styles 项目文档中使用的扩展元素或组件的样式
+univ-docs/content/extension         项目文档使用的扩展元素或组件
+univ-docs/content/navigation/app    项目文档使用的扩展元素或组件的代码
+univ-docs/content/navigation/assets 项目文档使用的扩展元素或组件的图片
+univ-docs/content/navigation/styles 项目文档使用的扩展元素或组件的样式
 univ-docs/content/navigation        项目文档的导航文件
-univ-docs/content/document          使用Markdown或HTML编写的项目文档
-univ-docs/content/image             项目文档中使用的图片
+univ-docs/content/document          项目文档，使用Markdown或HTML编写
+univ-docs/content/image             项目文档使用的图片
 ```
 
 ## 项目信息
 
 Univ文档项目的更多信息，请参考：[Univ文档项目](https://www.univtech.org.cn/univ/docs)
 
-## 联系方式：
+## 联系方式
 
 Univ文档项目开发者的联系方式如下，如有疑问或需要帮助请联系本人：
 + QQ：916462938
