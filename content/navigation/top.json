@@ -7,22 +7,22 @@
             {
                 "title": "主题1",
                 "noSideNav": true,
-                "url": "mixture/topic-page"
+                "url": "mixture/topic1"
             },
             {
                 "title": "主题2",
                 "noSideNav": true,
-                "url": "mixture/topic-pane"
+                "url": "mixture/topic2"
             },
             {
                 "title": "特性",
                 "noSideNav": true,
-                "url": "mixture/feature-page"
+                "url": "mixture/feature"
             },
             {
                 "title": "资源",
                 "noSideNav": true,
-                "url": "mixture/resource-page"
+                "url": "mixture/resource"
             }
         ]
     },

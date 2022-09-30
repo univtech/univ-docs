@@ -2,7 +2,7 @@
 {
     "logoUrl": "assets/images/logos/univ.svg",
     "startUrl": "#",
-    "content": "Univ文档\n油腻、有你、由你"
+    "content": "Univ文档\n使用回车字符进行换行"
 }
 </univ-mixture-logo>
 
