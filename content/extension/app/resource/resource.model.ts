@@ -1,3 +1,11 @@
+// 资源页面
+export interface ResourcePage {
+    // 页面标题
+    title: string;
+    // 资源列表
+    resourceLists: ResourceList[];
+}
+
 // 资源列表
 export interface ResourceList {
     // 列表标题
