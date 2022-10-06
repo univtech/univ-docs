@@ -254,7 +254,6 @@ export class NavService {
      */
     private getNavNodes(navFile: string): Observable<NavNode[]> {
         const navNodeObservable = this.httpClient.get<NavNode[]>(navFile).pipe(
-            map(navNodes => this.filterNavNodes(navNodes)),
             map(navNodes => this.setNavNodes(navNodes)),
             publishLast()
         );
@@ -268,9 +267,9 @@ export class NavService {
      * @param navNodes 过滤前的导航节点
      * @return 过滤后的导航节点
      */
-    private filterNavNodes(navNodes?: NavNode[]): NavNode[] {
+    static filterNavNodes(navNodes?: NavNode[]): NavNode[] {
         const filteredNavNodes = NavService.filterHiddenNavNodes(navNodes);
-        filteredNavNodes.forEach(navNode => navNode.childNodes = this.filterNavNodes(navNode.childNodes));
+        filteredNavNodes.forEach(navNode => navNode.childNodes = NavService.filterNavNodes(navNode.childNodes));
         return filteredNavNodes;
     }
 

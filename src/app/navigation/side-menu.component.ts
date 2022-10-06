@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {CurrNode, NavNode} from './nav.model';
+import {NavService} from './nav.service';
 
 /**
  * 侧边菜单组件。
@@ -18,7 +19,7 @@ import {CurrNode, NavNode} from './nav.model';
 export class SideMenuComponent {
 
     // 导航节点
-    @Input() navNodes: NavNode[];
+    _navNodes: NavNode[];
 
     // 当前节点
     @Input() currNode?: CurrNode;
@@ -28,5 +29,23 @@ export class SideMenuComponent {
 
     // 导航标签
     @Input() navLabel: string;
+
+    /**
+     * 获取导航节点
+     *
+     * @return 导航节点
+     */
+    get navNodes(): NavNode[] {
+        return this._navNodes;
+    }
+
+    /**
+     * 设置导航节点
+     *
+     * @param navNodes 导航节点
+     */
+    @Input() set navNodes(navNodes: NavNode[]) {
+        this._navNodes = NavService.filterNavNodes(navNodes);
+    }
 
 }

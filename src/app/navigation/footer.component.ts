@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {NavNode} from './nav.model';
+import {NavService} from './nav.service';
 import {Authorize, License, Support} from '../config/config.model';
 
 /**
@@ -17,10 +18,28 @@ import {Authorize, License, Support} from '../config/config.model';
 export class FooterComponent {
 
     // 导航节点
-    @Input() navNodes: NavNode[];
+    _navNodes: NavNode[];
 
     // 授权信息
     @Input() authorize: Authorize;
+
+    /**
+     * 获取导航节点
+     *
+     * @return 导航节点
+     */
+    get navNodes(): NavNode[] {
+        return this._navNodes;
+    }
+
+    /**
+     * 设置导航节点
+     *
+     * @param navNodes 导航节点
+     */
+    @Input() set navNodes(navNodes: NavNode[]) {
+        this._navNodes = NavService.filterNavNodes(navNodes);
+    }
 
     /**
      * 获取技术支持
