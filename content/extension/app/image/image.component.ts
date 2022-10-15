@@ -5,7 +5,6 @@ import {Component, Input} from '@angular/core';
  * ```
  * <univ-image title="图片标题" url="图片路径"></univ-image>
  * ```
- *
  */
 @Component({
     selector: 'univ-image',
