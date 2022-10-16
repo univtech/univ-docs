@@ -21,8 +21,4 @@
         margin: 0px;
         @include mixin.font-size(14);
     }
-
-    > *:not(:first-child) {
-        padding: 16px 24px;
-    }
 }
